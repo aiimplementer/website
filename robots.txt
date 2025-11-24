@@ -9,4 +9,4 @@ Disallow: /tmp/
 Disallow: /drafts/
 
 # Sitemap location (important for SEO)
-Sitemap: https://ai-freelancer.netlify.app/sitemap.xml
+Sitemap: https://ai-implementer.netlify.app/sitemap.xml
