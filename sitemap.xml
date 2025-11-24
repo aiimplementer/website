@@ -5,45 +5,45 @@
   xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
-  <!-- Sitemap generated for https://ai-freelancer.netlify.app/ -->
+  <!-- Sitemap generated for https://ai-implementer.netlify.app/ -->
   
   <url>
-    <loc>https://ai-freelancer.netlify.app/</loc>
+    <loc>https://ai-implementer.netlify.app/</loc>
     <lastmod>2025-10-31T09:07:17+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.00</priority>
   </url>
 
   <url>
-    <loc>https://ai-freelancer.netlify.app/posts/blog</loc>
+    <loc>https://ai-implementer.netlify.app/posts/blog</loc>
     <lastmod>2025-10-31T09:07:17+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
 
   <url>
-    <loc>https://ai-freelancer.netlify.app/faq</loc>
+    <loc>https://ai-implementer.netlify.app/faq</loc>
     <lastmod>2025-10-31T09:07:17+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
 
   <url>
-    <loc>https://ai-freelancer.netlify.app/enquiry</loc>
+    <loc>https://ai-implementer.netlify.app/enquiry</loc>
     <lastmod>2025-10-31T09:07:17+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
 
   <url>
-    <loc>https://ai-freelancer.netlify.app/privacy-policy</loc>
+    <loc>https://ai-implementer.netlify.app/privacy-policy</loc>
     <lastmod>2025-10-31T09:07:17+00:00</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.80</priority>
   </url>
 
   <url>
-    <loc>https://ai-freelancer.netlify.app/terms-of-service</loc>
+    <loc>https://ai-implementer.netlify.app/terms-of-service</loc>
     <lastmod>2025-10-31T09:07:17+00:00</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.80</priority>
@@ -51,35 +51,35 @@
 
   <!-- Blog Posts -->
   <url>
-    <loc>https://ai-freelancer.netlify.app/posts/ai-is-blessing-by-small-business</loc>
+    <loc>https://ai-implementer.netlify.app/posts/ai-is-blessing-by-small-business</loc>
     <lastmod>2025-10-31T09:07:17+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.64</priority>
   </url>
 
   <url>
-    <loc>https://ai-freelancer.netlify.app/posts/first-look-at-ai-by-small-business</loc>
+    <loc>https://ai-implementer.netlify.app/posts/first-look-at-ai-by-small-business</loc>
     <lastmod>2025-10-31T09:07:17+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.64</priority>
   </url>
 
   <url>
-    <loc>https://ai-freelancer.netlify.app/posts/why-small-businesses-should-consider-ai-automation</loc>
+    <loc>https://ai-implementer.netlify.app/posts/why-small-businesses-should-consider-ai-automation</loc>
     <lastmod>2025-10-31T09:07:17+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.64</priority>
   </url>
 
   <url>
-    <loc>https://ai-freelancer.netlify.app/posts/ai-automations-for-small-business</loc>
+    <loc>https://ai-implementer.netlify.app/posts/ai-automations-for-small-business</loc>
     <lastmod>2025-10-31T09:07:17+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.64</priority>
   </url>
 
   <url>
-    <loc>https://ai-freelancer.netlify.app/posts/automate-customer-support-ai</loc>
+    <loc>https://ai-implementer.netlify.app/posts/automate-customer-support-ai</loc>
     <lastmod>2025-10-31T09:07:17+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.64</priority>
