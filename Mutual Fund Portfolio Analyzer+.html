@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mutual Fund Portfolio Analyzer+ (MF Reports) | AI Implementer</title>
+<meta name="description" content="MF Reports (Mutual Fund Portfolio Analyzer+) — a standalone portfolio reporting suite for financial advisors, wealth managers, and family offices. Upload CAS statements, get 9 detailed reports, export polished PDFs.">
+<meta name="theme-color" content="#0f172a">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<script src="https://unpkg.com/lucide@latest" defer></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
+        colors: {
+          navy: { 950: '#0a1526', 900: '#0f172a', 800: '#132038', 700: '#1a2c4d' },
+          accent: { blue: '#2563eb', green: '#16a34a' },
+        },
+      },
+    },
+  };
+</script>
+<style>
+  body { font-family: 'Inter', sans-serif; background-color: #0f172a; color: #e2e8f0; }
+  
+  html { scroll-behavior: smooth; }
+  .grad-accent { background: linear-gradient(135deg, #2563eb, #16a34a); }
+  .grad-accent-text {
+    background: linear-gradient(135deg, #60a5fa, #4ade80);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .hero-glow {
+    background: radial-gradient(900px 500px at 15% 0%, rgba(37,99,235,0.20), transparent 60%),
+                radial-gradient(700px 500px at 85% 20%, rgba(22,163,74,0.16), transparent 60%);
+  }
+  .card-hover { transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease; }
+  .card-hover:hover { transform: translateY(-3px); box-shadow: 0 16px 34px rgba(15,23,42,0.10); border-color: #cbd5e1; }
+  
+  .dropdown { position: relative; }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #1e293b;
+      min-width: 180px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+      border-radius: 0.5rem;
+      z-index: 20;
+    }
+    .dropdown.active .dropdown-content { display: block !important; }
+    .dropdown-content a {
+      display: block;
+      padding: 0.75rem 1rem;
+      color: #e2e8f0;
+      text-decoration: none;
+    }
+    .dropdown-content a:hover {
+      background-color: #0f172a;
+      color: #22d3ee;
+    }
+	footer {
+    margin-top: 0 !important;
+}
+</style>
+</head>
+<body class="font-sans text-slate-800 antialiased bg-white">
+
+  <!-- ================= NAV ================= -->
+   <!-- Navbar -->
+  <nav class="bg-gray-900 border-b border-gray-700 sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-3">
+      <div class="flex items-center space-x-3">
+        <a href="index.html">
+          <img alt="AI Implementer Logo" class="w-25 h-10 object-contain" src="images/ai-implementer-logo.png"/>
+        </a>        
+      </div>
+      <div class="flex items-center space-x-6 text-sm font-medium text-cyan-400">
+        <a href="index.html" class="hover:text-cyan-400">Home</a>
+
+        <div class="dropdown relative">
+          <a href="#about" class="hover:text-cyan-400 focus:text-cyan-400 transition">About ▾</a>
+          <div class="dropdown-content absolute hidden bg-gray-800 mt-2 rounded-lg shadow-lg">
+            <a href="index.html#about" class="block px-4 py-2 hover:bg-gray-700 hover:text-cyan-400">About Me</a>
+            <a href="index.html#how" class="block px-4 py-2 hover:bg-gray-700 hover:text-cyan-400">How Do We Do</a>
+            <a href="index.html#help" class="block px-4 py-2 hover:bg-gray-700 hover:text-cyan-400">How I Help</a>
+			<a href="/posts/blog.html" class="block px-4 py-2 hover:bg-gray-700 hover:text-cyan-400">Blogs</a>
+          </div>
+        </div>
+
+        <div class="dropdown relative">
+          <a href="#solution" class="hover:text-cyan-400 focus:text-cyan-400 transition">AI Offerings ▾</a>
+          <div class="dropdown-content absolute hidden bg-gray-800 mt-2 rounded-lg shadow-lg">
+            <a href="index.html#services" class="block px-4 py-2 hover:bg-gray-700 hover:text-cyan-400">Services</a>
+			<a class="block px-4 py-2 hover:bg-gray-700 hover:text-cyan-400" href="index.html#solution">AI Solutions</a>
+            <a href="index.html#solutions-overview" class="block px-4 py-2 hover:bg-gray-700 hover:text-cyan-400">Solutions Overview</a>
+          </div>
+        </div>
+
+        <div class="dropdown relative">
+          <a href="#contact" class="hover:text-cyan-400 focus:text-cyan-400 transition">Contact ▾</a>
+          <div class="dropdown-content absolute hidden bg-gray-800 mt-2 rounded-lg shadow-lg">
+            <a href="faq.html" class="block px-4 py-2 hover:bg-gray-700 hover:text-cyan-400">FAQs</a>
+			<a class="block px-4 py-2 hover:bg-gray-700 hover:text-cyan-400" href="enquiry.html">Send Enquiry</a>
+            <a href="index.html#contact" class="block px-4 py-2 hover:bg-gray-700 hover:text-cyan-400">Get in Touch</a>
+          </div>
+        </div>
+
+        <!-- Social Icons Starts-->	 
+		 <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+
+		 <div class="flex space-x-2 text-cyan-400 text-2xl">
+		  <a alt="LinkedIn" title="Linked In" href="https://www.linkedin.com/company/ai-implementer/?viewAsMember=true" target="_blank" ><i class="ri-linkedin-box-line hover:text-cyan-300"></i></a>
+		  
+		  <a alt="Facebook" title="Facebook" href="https://www.facebook.com/profile.php?id=61581913815232" target="_blank"><i class="ri-facebook-circle-line hover:text-cyan-300"></i></a>
+		  
+		  <a alt="Instagram" title="Instagram" href="https://www.instagram.com/ai.implementer/" target="_blank"><i class="ri-instagram-line hover:text-cyan-300"></i></a>
+		 </div>
+		<!-- Social Icons Ends -->
+      </div>
+    </div>
+  </nav>
+
+  <!-- ================= HERO ================= -->
+  <section class="relative bg-navy-900 hero-glow overflow-hidden">
+    <div class="max-w-6xl mx-auto px-6 pt-20 pb-24 relative">
+      <div class="max-w-3xl">
+        <div class="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3.5 py-1.5 text-xs font-medium text-slate-300 mb-6">
+          <span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
+          Wealth &amp; Investment AI &middot; Pro Edition
+        </div>
+        <h1 class="text-4xl sm:text-5xl font-extrabold text-white tracking-tight leading-[1.1]">
+          Mutual Fund Portfolio Analyzer<span class="grad-accent-text">+</span>
+        </h1>
+        <p class="mt-2 text-slate-400 text-lg font-medium">MF Reports &mdash; a standalone portfolio reporting suite</p>
+        <p class="mt-6 text-slate-300 text-base sm:text-lg leading-relaxed">
+          Upload a Consolidated Account Statement and get a complete, presentation-ready
+          view of a portfolio in minutes &mdash; XIRR, holdings, dividends, cash flow, and more,
+          across as many folios and clients as you manage. Built for financial advisors,
+          wealth managers, and family offices who need more than a one-off spreadsheet.
+        </p>
+        <div class="mt-9 flex flex-wrap items-center gap-4">
+          <a href="#contact" class="inline-flex items-center justify-center rounded-full grad-accent text-white text-sm font-semibold px-6 py-3 shadow-lg shadow-blue-950/40 hover:opacity-90 transition-opacity">
+            Get Pricing &amp; a Demo
+          </a>
+          <a href="https://mutualfundreport.netlify.app/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-full border border-white/20 text-white text-sm font-semibold px-6 py-3 hover:bg-white/10 transition-colors">
+            Try the Free Analyzer &rarr;
+          </a>
+        </div>
+        <p class="mt-4 text-xs text-slate-500">No sign-up needed to try the free single-portfolio version. Analyzer+ is licensed per advisor / firm.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= WHO IT'S FOR ================= -->
+  <section class="bg-white border-b border-slate-100">
+    <div class="max-w-6xl mx-auto px-6 py-14">
+      <p class="text-center text-xs font-semibold tracking-widest text-slate-400 uppercase mb-6">Built for</p>
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-6 text-center">
+        <div class="text-slate-600 text-sm font-medium">Financial Advisors</div>
+        <div class="text-slate-600 text-sm font-medium">Wealth Managers</div>
+        <div class="text-slate-600 text-sm font-medium">Family Offices</div>
+        <div class="text-slate-600 text-sm font-medium">Individual Investors</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= KEY FEATURES ================= -->
+  <section class="bg-slate-50">
+    <div class="max-w-6xl mx-auto px-6 py-20">
+      <div class="max-w-xl mb-12">
+        <h2 class="text-3xl font-bold text-navy-900 tracking-tight">What it does</h2>
+        <p class="mt-3 text-slate-600">Everything needed to turn a stack of CAS PDFs into a client-ready portfolio review.</p>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+
+        <div class="card-hover bg-white rounded-2xl border border-slate-200 p-6">
+          <div class="h-10 w-10 rounded-lg grad-accent flex items-center justify-center text-white text-xs font-bold mb-4">CAS</div>
+          <h3 class="font-semibold text-navy-900 mb-1.5">Upload &amp; auto-parse</h3>
+          <p class="text-sm text-slate-600 leading-relaxed">Drop in a CAS PDF from CAMS, KFintech, or MF Central. Folios, transactions, and holdings are extracted automatically &mdash; no manual entry.</p>
+        </div>
+
+        <div class="card-hover bg-white rounded-2xl border border-slate-200 p-6">
+          <div class="h-10 w-10 rounded-lg grad-accent flex items-center justify-center text-white text-xs font-bold mb-4">&#8734;</div>
+          <h3 class="font-semibold text-navy-900 mb-1.5">Multi-folio, multi-client</h3>
+          <p class="text-sm text-slate-600 leading-relaxed">Consolidate multiple CAS files and folios into one dashboard, or keep every client's portfolio separate and switch between them instantly.</p>
+        </div>
+
+        <div class="card-hover bg-white rounded-2xl border border-slate-200 p-6">
+          <div class="h-10 w-10 rounded-lg grad-accent flex items-center justify-center text-white text-xs font-bold mb-4">NAV</div>
+          <h3 class="font-semibold text-navy-900 mb-1.5">Live NAVs &amp; indices</h3>
+          <p class="text-sm text-slate-600 leading-relaxed">One-click refresh pulls today's fund prices, alongside live NIFTY 50 / SENSEX for quick market context.</p>
+        </div>
+
+        <div class="card-hover bg-white rounded-2xl border border-slate-200 p-6">
+          <div class="h-10 w-10 rounded-lg grad-accent flex items-center justify-center text-white text-xs font-bold mb-4">XIRR</div>
+          <h3 class="font-semibold text-navy-900 mb-1.5">Accurate return metrics</h3>
+          <p class="text-sm text-slate-600 leading-relaxed">XIRR and cash-flow-aware return calculations, not simplified approximations &mdash; the numbers hold up in a client meeting.</p>
+        </div>
+
+        <div class="card-hover bg-white rounded-2xl border border-slate-200 p-6">
+          <div class="h-10 w-10 rounded-lg grad-accent flex items-center justify-center text-white text-xs font-bold mb-4">PDF</div>
+          <h3 class="font-semibold text-navy-900 mb-1.5">Export any report</h3>
+          <p class="text-sm text-slate-600 leading-relaxed">Every report exports as a polished, print-ready PDF &mdash; share it as-is with a client or attach it to a review email.</p>
+        </div>
+
+        <div class="card-hover bg-white rounded-2xl border border-slate-200 p-6">
+          <div class="h-10 w-10 rounded-lg grad-accent flex items-center justify-center text-white text-xs font-bold mb-4">&#128274;</div>
+          <h3 class="font-semibold text-navy-900 mb-1.5">Runs locally, licensed per firm</h3>
+          <p class="text-sm text-slate-600 leading-relaxed">Standalone desktop app &mdash; portfolio data stays on your machine. Licensed and activated per advisor or firm.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= REPORTS INCLUDED ================= -->
+  <section class="bg-white">
+    <div class="max-w-6xl mx-auto px-6 py-20">
+      <div class="max-w-xl mb-12">
+        <h2 class="text-3xl font-bold text-navy-900 tracking-tight">9 reports, one dashboard</h2>
+        <p class="mt-3 text-slate-600">Every angle on a portfolio an advisor or investor actually needs &mdash; not just a single summary page.</p>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+
+        <div class="rounded-xl border border-slate-200 p-5">
+          <h3 class="font-semibold text-navy-900 text-sm mb-1">Investor Summary</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">One-page snapshot: fund-type mix, top performers, dividends, and year-wise cash flow.</p>
+        </div>
+        <div class="rounded-xl border border-slate-200 p-5">
+          <h3 class="font-semibold text-navy-900 text-sm mb-1">1-Day Gain</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">How the portfolio moved since yesterday's prices &mdash; fund-by-fund and total.</p>
+        </div>
+        <div class="rounded-xl border border-slate-200 p-5">
+          <h3 class="font-semibold text-navy-900 text-sm mb-1">Portfolio Analytics</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">Investing discipline and cash-flow trends by financial year.</p>
+        </div>
+        <div class="rounded-xl border border-slate-200 p-5">
+          <h3 class="font-semibold text-navy-900 text-sm mb-1">Fund Aggregation</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">Current holdings fund-by-fund, with sector-wise allocation.</p>
+        </div>
+        <div class="rounded-xl border border-slate-200 p-5">
+          <h3 class="font-semibold text-navy-900 text-sm mb-1">Fund Performance</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">Growth-over-time chart for every fund held.</p>
+        </div>
+        <div class="rounded-xl border border-slate-200 p-5">
+          <h3 class="font-semibold text-navy-900 text-sm mb-1">Fund Widgets</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">Visual, card-based view of every holding for a fast scan.</p>
+        </div>
+        <div class="rounded-xl border border-slate-200 p-5">
+          <h3 class="font-semibold text-navy-900 text-sm mb-1">Transactions</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">Full buy/sell/switch/SIP ledger across every statement.</p>
+        </div>
+        <div class="rounded-xl border border-slate-200 p-5">
+          <h3 class="font-semibold text-navy-900 text-sm mb-1">Dividend Income</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">Payouts by year, fund, and month &mdash; tracked separately from capital gains.</p>
+        </div>
+        <div class="rounded-xl border border-slate-200 p-5">
+          <h3 class="font-semibold text-navy-900 text-sm mb-1">Cash Flow Consolidation</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">Month-by-month money in vs. money out, for easy reconciliation.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= HOW IT WORKS ================= -->
+  <section class="bg-slate-50">
+    <div class="max-w-6xl mx-auto px-6 py-20">
+      <div class="max-w-xl mb-12">
+        <h2 class="text-3xl font-bold text-navy-900 tracking-tight">How it works</h2>
+        <p class="mt-3 text-slate-600">From statement to shareable report in four steps.</p>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div>
+          <div class="h-9 w-9 rounded-full bg-navy-900 text-white text-sm font-bold flex items-center justify-center mb-4">1</div>
+          <h3 class="font-semibold text-navy-900 mb-1.5 text-sm">Upload CAS</h3>
+          <p class="text-sm text-slate-600 leading-relaxed">Add a Consolidated Account Statement PDF for any client or portfolio.</p>
+        </div>
+        <div>
+          <div class="h-9 w-9 rounded-full bg-navy-900 text-white text-sm font-bold flex items-center justify-center mb-4">2</div>
+          <h3 class="font-semibold text-navy-900 mb-1.5 text-sm">Auto-parse &amp; match</h3>
+          <p class="text-sm text-slate-600 leading-relaxed">Folios, transactions, and fund identities are extracted and matched automatically.</p>
+        </div>
+        <div>
+          <div class="h-9 w-9 rounded-full bg-navy-900 text-white text-sm font-bold flex items-center justify-center mb-4">3</div>
+          <h3 class="font-semibold text-navy-900 mb-1.5 text-sm">Explore 9 reports</h3>
+          <p class="text-sm text-slate-600 leading-relaxed">Every report renders live, filterable by folio or client.</p>
+        </div>
+        <div>
+          <div class="h-9 w-9 rounded-full bg-navy-900 text-white text-sm font-bold flex items-center justify-center mb-4">4</div>
+          <h3 class="font-semibold text-navy-900 mb-1.5 text-sm">Export &amp; share</h3>
+          <p class="text-sm text-slate-600 leading-relaxed">Download any report as a polished PDF for a client review.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= EDITIONS ================= -->
+  <section class="bg-white">
+    <div class="max-w-6xl mx-auto px-6 py-20">
+      <div class="max-w-xl mb-12">
+        <h2 class="text-3xl font-bold text-navy-900 tracking-tight">Two ways to use it</h2>
+        <p class="mt-3 text-slate-600">Start free with a single portfolio, or license the full multi-client edition.</p>
+      </div>
+      <div class="grid sm:grid-cols-2 gap-6">
+
+        <div class="rounded-2xl border border-slate-200 p-8">
+          <p class="text-xs font-semibold tracking-widest text-slate-400 uppercase mb-2">Free</p>
+          <h3 class="text-xl font-bold text-navy-900 mb-3">Analyzer</h3>
+          <p class="text-sm text-slate-600 mb-6 leading-relaxed">For an individual checking their own portfolio. One CAS, instant results, no install.</p>
+          <ul class="space-y-2.5 text-sm text-slate-700 mb-8">
+            <li class="flex items-start gap-2"><span class="text-emerald-600 mt-0.5">&#10003;</span>Single CAS upload</li>
+            <li class="flex items-start gap-2"><span class="text-emerald-600 mt-0.5">&#10003;</span>Fund-wise performance &amp; XIRR</li>
+            <li class="flex items-start gap-2"><span class="text-emerald-600 mt-0.5">&#10003;</span>Runs in the browser</li>
+          </ul>
+          <a href="https://mutualfundreport.netlify.app/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center w-full rounded-full border border-slate-300 text-navy-900 text-sm font-semibold px-5 py-2.5 hover:bg-slate-50 transition-colors">
+            Try it free
+          </a>
+        </div>
+
+        <div class="rounded-2xl border-2 border-navy-900 p-8 relative">
+          <p class="absolute -top-3 right-6 rounded-full grad-accent text-white text-[11px] font-semibold px-3 py-1">Pro Edition</p>
+          <p class="text-xs font-semibold tracking-widest text-slate-400 uppercase mb-2">Licensed</p>
+          <h3 class="text-xl font-bold text-navy-900 mb-3">Analyzer+ (MF Reports)</h3>
+          <p class="text-sm text-slate-600 mb-6 leading-relaxed">For advisors and firms managing multiple clients and portfolios.</p>
+          <ul class="space-y-2.5 text-sm text-slate-700 mb-8">
+            <li class="flex items-start gap-2"><span class="text-emerald-600 mt-0.5">&#10003;</span>Multiple CAS files &amp; folios consolidated</li>
+            <li class="flex items-start gap-2"><span class="text-emerald-600 mt-0.5">&#10003;</span>Family / client portfolio management</li>
+            <li class="flex items-start gap-2"><span class="text-emerald-600 mt-0.5">&#10003;</span>All 9 reports, PDF export</li>
+            <li class="flex items-start gap-2"><span class="text-emerald-600 mt-0.5">&#10003;</span>Standalone desktop install, licensed per firm</li>
+          </ul>
+          <a href="#contact" class="inline-flex items-center justify-center w-full rounded-full grad-accent text-white text-sm font-semibold px-5 py-2.5 hover:opacity-90 transition-opacity">
+            Get pricing &amp; a demo
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CONTACT ================= -->
+  <section id="contact" class="bg-navy-900">
+    <div class="max-w-6xl mx-auto px-6 py-20">
+      <div class="max-w-xl">
+        <h2 class="text-3xl font-bold text-white tracking-tight">Get in touch</h2>
+        <p class="mt-3 text-slate-400">Want a walkthrough, or ready to license Analyzer+ for your practice? Let's talk.</p>
+      </div>
+      <div class="mt-10 grid sm:grid-cols-3 gap-6">
+        <div class="rounded-xl border border-white/10 bg-white/5 p-5">
+          <p class="text-xs font-semibold tracking-widest text-slate-400 uppercase mb-2">Email</p>
+          <a href="mailto:ai.implementer@gmail.com" class="text-white text-sm font-medium hover:text-emerald-400 transition-colors">ai.implementer@gmail.com</a>
+        </div>
+        <div class="rounded-xl border border-white/10 bg-white/5 p-5">
+          <p class="text-xs font-semibold tracking-widest text-slate-400 uppercase mb-2">Call / WhatsApp</p>
+          <p class="text-white text-sm font-medium">+91 80875 58460</p>
+        </div>
+        <div class="rounded-xl border border-white/10 bg-white/5 p-5">
+          <p class="text-xs font-semibold tracking-widest text-slate-400 uppercase mb-2">Enquiry Form</p>
+          <a href="https://ai-implementer.netlify.app/enquiry" class="text-white text-sm font-medium hover:text-emerald-400 transition-colors">Send Enquiry &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-center py-8 mt-16">
+    <p class="text-gray-300 mb-4">
+      <a href="faq.html" class="text-cyan-400 hover:underline">FAQs</a> |
+      <a href="/posts/blog.html" class="text-cyan-400 hover:underline">Blogs</a> |
+      <a href="privacy-policy.html" class="text-cyan-400 hover:underline">Privacy Policy</a> |
+      <a href="terms-of-service.html" class="text-cyan-400 hover:underline">Terms of Service</a>
+    </p>
+    <p class="text-sm text-gray-400">© 2025 AI Implementer | Designed with passion for small businesses</p>
+  </footer>
+  
+  <script>
+  <!-- menu links-->
+	document.addEventListener('DOMContentLoaded', function() {
+      const dropdowns = document.querySelectorAll('.dropdown');
+      dropdowns.forEach(dropdown => {
+        const trigger = dropdown.querySelector('a');
+        trigger.addEventListener('click', function(e) {
+          e.preventDefault();
+          const isActive = dropdown.classList.contains('active');
+          dropdowns.forEach(d => d.classList.remove('active'));
+          if (!isActive) dropdown.classList.add('active');
+        });
+      });
+      document.addEventListener('click', function(e) {
+        if (![...dropdowns].some(d => d.contains(e.target))) {
+          dropdowns.forEach(d => d.classList.remove('active'));
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
