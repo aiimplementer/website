@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mutual Fund Portfolio Analyzer+ (MF Reports) | AI Implementer</title>
-<meta name="description" content="MF Reports (Mutual Fund Portfolio Analyzer+) — a standalone portfolio reporting suite for financial advisors, wealth managers, and family offices. Upload CAS statements, get 9 detailed reports, export polished PDFs.">
+<meta name="description" content="MF Reports (Mutual Fund Portfolio Analyzer+) — a standalone, privacy-first portfolio reporting suite for financial advisors, wealth managers, and family offices. Upload CAS statements, get 9 detailed reports, export polished PDFs — all processed locally, nothing uploaded to any server.">
 <meta name="theme-color" content="#0f172a">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -100,6 +100,7 @@
             <a href="index.html#services" class="block px-4 py-2 hover:bg-gray-700 hover:text-cyan-400">Services</a>
 			<a class="block px-4 py-2 hover:bg-gray-700 hover:text-cyan-400" href="index.html#solution">AI Solutions</a>
             <a href="index.html#solutions-overview" class="block px-4 py-2 hover:bg-gray-700 hover:text-cyan-400">Solutions Overview</a>
+            <a href="#privacy" class="block px-4 py-2 hover:bg-gray-700 hover:text-cyan-400">Privacy</a>
           </div>
         </div>
 		
@@ -155,6 +156,9 @@
           across as many folios and clients as you manage. Built for financial advisors,
           wealth managers, and family offices who need more than a one-off spreadsheet.
         </p>
+        <p class="mt-3 flex items-center gap-2 text-sm font-medium text-emerald-400">
+          <span>&#128274;</span> Your CAS data is processed locally &mdash; never uploaded to a server.
+        </p>
         <div class="mt-9 flex flex-wrap items-center gap-4">
           <a href="#contact" class="inline-flex items-center justify-center rounded-full grad-accent text-white text-sm font-semibold px-6 py-3 shadow-lg shadow-blue-950/40 hover:opacity-90 transition-opacity">
             Get Pricing &amp; a Demo
@@ -172,10 +176,11 @@
   <section class="bg-white border-b border-slate-100">
     <div class="max-w-6xl mx-auto px-6 py-14">
       <p class="text-center text-xs font-semibold tracking-widest text-slate-400 uppercase mb-6">Built for</p>
-      <div class="grid grid-cols-2 sm:grid-cols-4 gap-6 text-center">
+      <div class="grid grid-cols-2 sm:grid-cols-5 gap-6 text-center">
+        <div class="text-slate-600 text-sm font-medium">Families</div>
+        <div class="text-slate-600 text-sm font-medium">Family Offices</div>
         <div class="text-slate-600 text-sm font-medium">Financial Advisors</div>
         <div class="text-slate-600 text-sm font-medium">Wealth Managers</div>
-        <div class="text-slate-600 text-sm font-medium">Family Offices</div>
         <div class="text-slate-600 text-sm font-medium">Individual Investors</div>
       </div>
     </div>
@@ -230,7 +235,47 @@
     </div>
   </section>
 
+  <!-- ================= FAMILY HIGHLIGHT ================= -->
+  <section class="relative bg-navy-900 hero-glow overflow-hidden">
+    <div class="max-w-6xl mx-auto px-6 py-16 relative">
+      <div class="grid lg:grid-cols-3 gap-10 items-center">
+        <div class="lg:col-span-2">
+          <div class="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3.5 py-1.5 text-xs font-medium text-slate-300 mb-5">
+            <span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
+            A favourite use case
+          </div>
+          <h2 class="text-2xl sm:text-3xl font-bold text-white tracking-tight leading-snug">
+            One place to see your <span class="grad-accent-text">whole family's</span> mutual fund holdings
+          </h2>
+          <p class="mt-4 text-slate-300 text-base leading-relaxed max-w-2xl">
+            Most households have investments scattered across separate CAS statements &mdash; yours, your spouse's,
+            your parents', maybe your kids'. Analyzer+ lets you drop in every family member's CAS and see the
+            whole household as one consolidated portfolio, or switch between individuals in a click &mdash; all
+            processed locally, without any statement ever leaving your device.
+          </p>
+        </div>
+        <div class="lg:col-span-1">
+          <div class="rounded-2xl border border-white/10 bg-white/5 p-6 space-y-4">
+            <div class="flex items-start gap-3">
+              <span class="text-emerald-400 mt-0.5">&#10003;</span>
+              <p class="text-sm text-slate-200">Combine CAS files for every family member into one net-worth view</p>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="text-emerald-400 mt-0.5">&#10003;</span>
+              <p class="text-sm text-slate-200">Compare growth, XIRR, and allocation across individuals side by side</p>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="text-emerald-400 mt-0.5">&#10003;</span>
+              <p class="text-sm text-slate-200">Export a single consolidated report, or one per person</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ================= REPORTS INCLUDED ================= -->
+
   <section class="bg-white">
     <div class="max-w-6xl mx-auto px-6 py-20">
       <div class="max-w-xl mb-12">
@@ -312,12 +357,50 @@
     </div>
   </section>
 
+  <!-- ================= PRIVACY ================= -->
+  <section id="privacy" class="bg-white">
+    <div class="max-w-6xl mx-auto px-6 py-20">
+      <div class="max-w-xl mb-12">
+        <p class="text-xs font-semibold tracking-widest text-emerald-600 uppercase mb-3">Privacy, by design</p>
+        <h2 class="text-3xl font-bold text-navy-900 tracking-tight">Your CAS statement never leaves your device</h2>
+        <p class="mt-3 text-slate-600">A CAS has your PAN, folio numbers, holdings, and contact details on it. That's not something to hand to a server. Analyzer+ was built so it never has to.</p>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+
+        <div class="card-hover bg-slate-50 rounded-2xl border border-slate-200 p-6">
+          <div class="h-10 w-10 rounded-lg grad-accent flex items-center justify-center text-white text-xs font-bold mb-4">&#128274;</div>
+          <h3 class="font-semibold text-navy-900 mb-1.5">No upload, ever</h3>
+          <p class="text-sm text-slate-600 leading-relaxed">Your CAS PDF is parsed on your own machine (or in your browser for the free version). It is never sent to us or any third-party server.</p>
+        </div>
+
+        <div class="card-hover bg-slate-50 rounded-2xl border border-slate-200 p-6">
+          <div class="h-10 w-10 rounded-lg grad-accent flex items-center justify-center text-white text-xs font-bold mb-4">&#9889;</div>
+          <h3 class="font-semibold text-navy-900 mb-1.5">Minimal, one-time network use</h3>
+          <p class="text-sm text-slate-600 leading-relaxed">The only online step is fetching current NAVs to value your holdings &mdash; your CAS itself is never part of that call. Once a report is generated, you can browse it offline; refresh NAVs again only when you want updated prices.</p>
+        </div>
+
+        <div class="card-hover bg-slate-50 rounded-2xl border border-slate-200 p-6">
+          <div class="h-10 w-10 rounded-lg grad-accent flex items-center justify-center text-white text-xs font-bold mb-4">&#128100;</div>
+          <h3 class="font-semibold text-navy-900 mb-1.5">No account required</h3>
+          <p class="text-sm text-slate-600 leading-relaxed">No email, phone number, or sign-up to try the free version. The licensed edition activates locally &mdash; it doesn't sync your portfolio to an account in the cloud.</p>
+        </div>
+
+        <div class="card-hover bg-slate-50 rounded-2xl border border-slate-200 p-6">
+          <div class="h-10 w-10 rounded-lg grad-accent flex items-center justify-center text-white text-xs font-bold mb-4">&#128196;</div>
+          <h3 class="font-semibold text-navy-900 mb-1.5">You decide what's shared</h3>
+          <p class="text-sm text-slate-600 leading-relaxed">The only data that ever leaves your device is a PDF report you deliberately export &mdash; nothing is transmitted in the background.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
   <!-- ================= EDITIONS ================= -->
-  <section class="bg-white">
+  <section class="bg-slate-50">
     <div class="max-w-6xl mx-auto px-6 py-20">
       <div class="max-w-xl mb-12">
         <h2 class="text-3xl font-bold text-navy-900 tracking-tight">Two ways to use it</h2>
-        <p class="mt-3 text-slate-600">Start free with a single portfolio, or license the full multi-client edition.</p>
+        <p class="mt-3 text-slate-600">Start free with a single portfolio, or license the full multi-folio edition.</p>
       </div>
       <div class="grid sm:grid-cols-2 gap-6">
 
