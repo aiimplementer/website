@@ -399,6 +399,50 @@
     </div>
   </section>
 
+  <!-- ================= WINDOWS COMPATIBILITY ================= -->
+  <section id="windows-compatibility" class="bg-white">
+    <div class="max-w-6xl mx-auto px-6 py-20">
+      <div class="max-w-xl mb-12">
+        <p class="text-xs font-semibold tracking-widest text-blue-600 uppercase mb-3">System requirements</p>
+        <h2 class="text-3xl font-bold text-navy-900 tracking-tight">Windows compatibility</h2>
+        <p class="mt-3 text-slate-600">Analyzer+ (MF Reports) ships as a native Windows installer. Here's what it needs to run.</p>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+
+        <div class="card-hover bg-slate-50 rounded-2xl border border-slate-200 p-6">
+          <div class="h-10 w-10 rounded-lg grad-accent flex items-center justify-center text-white text-xs font-bold mb-4">OS</div>
+          <h3 class="font-semibold text-navy-900 mb-1.5">Windows 10 &amp; 11</h3>
+          <p class="text-sm text-slate-600 leading-relaxed">Verified on Windows 10 (version 2004/20H2 or later) and Windows 11, 64-bit only. Not tested on Windows Server editions or 32-bit Windows.</p>
+        </div>
+
+        <div class="card-hover bg-slate-50 rounded-2xl border border-slate-200 p-6">
+          <div class="h-10 w-10 rounded-lg grad-accent flex items-center justify-center text-white text-xs font-bold mb-4">&#127760;</div>
+          <h3 class="font-semibold text-navy-900 mb-1.5">WebView2 runtime</h3>
+          <p class="text-sm text-slate-600 leading-relaxed">Requires the Microsoft Edge WebView2 Runtime, which powers the app's interface. It comes pre-installed on Windows 11 and is delivered via Windows Update on current Windows 10 &mdash; on an older, un-updated machine it may need a quick separate install.</p>
+        </div>
+
+        <div class="card-hover bg-slate-50 rounded-2xl border border-slate-200 p-6">
+          <div class="h-10 w-10 rounded-lg grad-accent flex items-center justify-center text-white text-xs font-bold mb-4">&#128230;</div>
+          <h3 class="font-semibold text-navy-900 mb-1.5">One-click installer</h3>
+          <p class="text-sm text-slate-600 leading-relaxed">Distributed as a single <code class="text-xs bg-slate-200 rounded px-1 py-0.5">MFReports-Setup.exe</code>. No Python, no dependencies to install manually &mdash; it's a self-contained desktop app.</p>
+        </div>
+
+        <div class="card-hover bg-slate-50 rounded-2xl border border-slate-200 p-6">
+          <div class="h-10 w-10 rounded-lg grad-accent flex items-center justify-center text-white text-xs font-bold mb-4">&#128273;</div>
+          <h3 class="font-semibold text-navy-900 mb-1.5">No admin rights needed</h3>
+          <p class="text-sm text-slate-600 leading-relaxed">Installs and runs entirely under your Windows user account &mdash; nothing requires elevated or administrator privileges.</p>
+        </div>
+
+      </div>
+
+      <div class="mt-6 rounded-xl border border-amber-200 bg-amber-50 p-5">
+        <p class="text-sm text-amber-900 leading-relaxed">
+          <span class="font-semibold">Known Windows 11 quirk:</span> on some machines, an unrelated OS-level bug (tied to update KB5019980) in Windows' "Suggested Actions" clipboard feature can briefly spam the terminal or freeze the window when a text field gains focus. Analyzer+ automatically applies the same workaround Windows Settings itself uses when you turn Suggested Actions off &mdash; no action needed on your end, and it doesn't affect app functionality.
+        </p>
+      </div>
+    </div>
+  </section>
+
   <!-- ================= EDITIONS ================= -->
   <section class="bg-slate-50">
     <div class="max-w-6xl mx-auto px-6 py-20">
