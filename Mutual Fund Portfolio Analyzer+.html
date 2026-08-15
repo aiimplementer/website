@@ -446,37 +446,45 @@
   <!-- ================= EDITIONS ================= -->
   <section class="bg-slate-50">
     <div class="max-w-6xl mx-auto px-6 py-20">
-      <div class="max-w-xl mb-12">
-        <h2 class="text-3xl font-bold text-navy-900 tracking-tight">Two ways to use it</h2>
-        <p class="mt-3 text-slate-600">Both editions run as the standalone Windows desktop app. Access is enabled per registered email, activated on your machine.</p>
+      <div class="max-w-xl mb-4">
+        <h2 class="text-3xl font-bold text-navy-900 tracking-tight">Plans built around investor folios</h2>
+        <p class="mt-3 text-slate-600">Every plan runs the same standalone Windows app. What changes is how many investor folios you can hold at once &mdash; from your own household to a full client book.</p>
       </div>
-      <div class="grid sm:grid-cols-2 gap-6">
+      <div class="flex flex-wrap gap-x-6 gap-y-1 mb-10 text-xs text-slate-500">
+        <span><span class="text-navy-900 font-semibold">Solo</span> &mdash; Trial, Basic, Prime: 1 seat, billed flat per quarter</span>
+        <span aria-hidden="true">&middot;</span>
+        <span><span class="text-navy-900 font-semibold">Org</span> &mdash; Org, Org Prime: 2+ seats, billed per seat per quarter</span>
+      </div>
 
-        <div class="rounded-2xl border border-slate-200 p-8">
-          <p class="text-xs font-semibold tracking-widest text-slate-400 uppercase mb-2">Free &middot; 2 weeks</p>
+      <!-- Solo tier row -->
+      <p class="text-xs font-semibold tracking-widest text-slate-400 uppercase mb-3">For yourself &amp; your household</p>
+      <div class="grid sm:grid-cols-3 gap-6 mb-14">
+
+        <div class="rounded-2xl border-2 border-emerald-500 p-8 relative bg-emerald-50/40">
+          <p class="absolute -top-3 right-6 rounded-full bg-emerald-600 text-white text-[11px] font-semibold px-3 py-1">Start here</p>
+          <p class="text-xs font-semibold tracking-widest text-emerald-700 uppercase mb-2">Free &middot; 14 days</p>
           <h3 class="text-xl font-bold text-navy-900 mb-3">Trial</h3>
-          <p class="text-sm text-slate-600 mb-6 leading-relaxed">Full access to Analyzer+ for 14 days, so you can try it against your own CAS statements before deciding.</p>
+          <p class="text-sm text-slate-600 mb-6 leading-relaxed">Full access for 14 days, so you can try it against your own CAS statements before deciding.</p>
           <ul class="space-y-2.5 text-sm text-slate-700 mb-8">
             <li class="flex items-start gap-2"><span class="text-emerald-600 mt-0.5">&#10003;</span>All 10 reports &amp; PDF export</li>
-            <li class="flex items-start gap-2"><span class="text-emerald-600 mt-0.5">&#10003;</span>Multiple CAS files &amp; folios consolidated</li>
-            <li class="flex items-start gap-2"><span class="text-emerald-600 mt-0.5">&#10003;</span>Standalone Windows desktop install</li>
+            <li class="flex items-start gap-2"><span class="text-emerald-600 mt-0.5">&#10003;</span>Up to 2 investor folios</li>
             <li class="flex items-start gap-2"><span class="text-emerald-600 mt-0.5">&#10003;</span>Registered email activates the license &mdash; no card required</li>
             <li class="flex items-start gap-2"><span class="text-slate-400 mt-0.5">&#8212;</span>Access ends automatically after 14 days</li>
           </ul>
-          <a href="#contact" class="inline-flex items-center justify-center w-full rounded-full border border-slate-300 text-navy-900 text-sm font-semibold px-5 py-2.5 hover:bg-slate-50 transition-colors">
+          <a href="#contact" class="inline-flex items-center justify-center w-full rounded-full bg-emerald-600 text-white text-sm font-semibold px-5 py-2.5 hover:bg-emerald-700 transition-colors">
             Start free trial
           </a>
         </div>
 
         <div class="rounded-2xl border-2 border-navy-900 p-8 relative">
           <p class="absolute -top-3 right-6 rounded-full grad-accent text-white text-[11px] font-semibold px-3 py-1">Most popular</p>
-          <p class="text-xs font-semibold tracking-widest text-slate-400 uppercase mb-2">Paid &middot; 3 months</p>
-          <h3 class="text-xl font-bold text-navy-900 mb-3">Standard</h3>
-          <p class="text-sm text-slate-600 mb-6 leading-relaxed">For advisors and firms who need ongoing access to manage multiple clients and portfolios.</p>
+          <p class="text-xs font-semibold tracking-widest text-slate-400 uppercase mb-2">Paid &middot; per quarter</p>
+          <h3 class="text-xl font-bold text-navy-900 mb-1">Basic</h3>
+          <p class="text-2xl font-bold text-navy-900 mb-3">&#8377;500<span class="text-sm font-medium text-slate-400"> / qtr</span></p>
+          <p class="text-sm text-slate-600 mb-6 leading-relaxed">For a single investor &mdash; or a household of two, like you and your spouse.</p>
           <ul class="space-y-2.5 text-sm text-slate-700 mb-8">
             <li class="flex items-start gap-2"><span class="text-emerald-600 mt-0.5">&#10003;</span>All 10 reports &amp; PDF export</li>
-            <li class="flex items-start gap-2"><span class="text-emerald-600 mt-0.5">&#10003;</span>Multiple CAS files &amp; folios consolidated</li>
-            <li class="flex items-start gap-2"><span class="text-emerald-600 mt-0.5">&#10003;</span>Family / client portfolio management</li>
+            <li class="flex items-start gap-2"><span class="text-emerald-600 mt-0.5">&#10003;</span>Up to 2 investor folios</li>
             <li class="flex items-start gap-2"><span class="text-emerald-600 mt-0.5">&#10003;</span>Standalone Windows desktop install</li>
             <li class="flex items-start gap-2"><span class="text-emerald-600 mt-0.5">&#10003;</span>Licensed for 3 months from activation, tied to your registered email</li>
           </ul>
@@ -485,8 +493,68 @@
           </a>
         </div>
 
+        <div class="rounded-2xl border border-slate-200 p-8">
+          <p class="text-xs font-semibold tracking-widest text-slate-400 uppercase mb-2">Paid &middot; per quarter</p>
+          <h3 class="text-xl font-bold text-navy-900 mb-1">Prime</h3>
+          <p class="text-2xl font-bold text-navy-900 mb-3">&#8377;700<span class="text-sm font-medium text-slate-400"> / qtr</span></p>
+          <p class="text-sm text-slate-600 mb-6 leading-relaxed">For a bigger household &mdash; parents, in-laws, or a few close family folios together.</p>
+          <ul class="space-y-2.5 text-sm text-slate-700 mb-8">
+            <li class="flex items-start gap-2"><span class="text-emerald-600 mt-0.5">&#10003;</span>All 10 reports &amp; PDF export</li>
+            <li class="flex items-start gap-2"><span class="text-emerald-600 mt-0.5">&#10003;</span>Up to 5 investor folios</li>
+            <li class="flex items-start gap-2"><span class="text-emerald-600 mt-0.5">&#10003;</span>Standalone Windows desktop install</li>
+            <li class="flex items-start gap-2"><span class="text-emerald-600 mt-0.5">&#10003;</span>Licensed for 3 months from activation, tied to your registered email</li>
+          </ul>
+          <a href="#contact" class="inline-flex items-center justify-center w-full rounded-full border border-slate-300 text-navy-900 text-sm font-semibold px-5 py-2.5 hover:bg-slate-50 transition-colors">
+            Get pricing &amp; activate
+          </a>
+        </div>
+
       </div>
-      <p class="mt-6 text-xs text-slate-500">Both Trial and Standard require a registered email address to activate &mdash; this is what the license is issued and bound to on your machine.</p>
+
+      <!-- Org tier row -->
+      <p class="text-xs font-semibold tracking-widest text-slate-400 uppercase mb-3">For advisors, firms &amp; family offices</p>
+      <div class="grid sm:grid-cols-2 gap-6">
+
+        <div class="rounded-2xl border border-slate-200 p-8">
+          <p class="text-xs font-semibold tracking-widest text-slate-400 uppercase mb-2">Paid &middot; per seat, per quarter</p>
+          <h3 class="text-xl font-bold text-navy-900 mb-1">Org</h3>
+          <p class="text-2xl font-bold text-navy-900 mb-1">&#8377;1,500<span class="text-sm font-medium text-slate-400"> / seat / qtr</span></p>
+          <p class="text-xs text-slate-500 mb-3">Starts from &#8377;3,000 / qtr at the 2-seat minimum</p>
+          <p class="text-sm text-slate-600 mb-6 leading-relaxed">For advisors and small firms managing a client book &mdash; each client gets their own folio, reviewed separately or combined.</p>
+          <ul class="space-y-2.5 text-sm text-slate-700 mb-8">
+            <li class="flex items-start gap-2"><span class="text-emerald-600 mt-0.5">&#10003;</span>All 10 reports &amp; PDF export</li>
+            <li class="flex items-start gap-2"><span class="text-emerald-600 mt-0.5">&#10003;</span>Up to 30 investor folios</li>
+            <li class="flex items-start gap-2"><span class="text-emerald-600 mt-0.5">&#10003;</span>Starts at 2 seats &mdash; add more anytime, billed per seat</li>
+            <li class="flex items-start gap-2"><span class="text-emerald-600 mt-0.5">&#10003;</span>Standalone Windows desktop install</li>
+            <li class="flex items-start gap-2"><span class="text-emerald-600 mt-0.5">&#10003;</span>Licensed for 3 months from activation per seat</li>
+          </ul>
+          <a href="#contact" class="inline-flex items-center justify-center w-full rounded-full border border-slate-300 text-navy-900 text-sm font-semibold px-5 py-2.5 hover:bg-slate-50 transition-colors">
+            Get pricing &amp; activate
+          </a>
+        </div>
+
+        <div class="rounded-2xl border-2 border-navy-900 p-8 relative">
+          <p class="absolute -top-3 right-6 rounded-full grad-accent text-white text-[11px] font-semibold px-3 py-1">For larger books</p>
+          <p class="text-xs font-semibold tracking-widest text-slate-400 uppercase mb-2">Paid &middot; per seat, per quarter</p>
+          <h3 class="text-xl font-bold text-navy-900 mb-1">Org Prime</h3>
+          <p class="text-2xl font-bold text-navy-900 mb-1">&#8377;2,500<span class="text-sm font-medium text-slate-400"> / seat / qtr</span></p>
+          <p class="text-xs text-slate-500 mb-3">Starts from &#8377;5,000 / qtr at the 2-seat minimum</p>
+          <p class="text-sm text-slate-600 mb-6 leading-relaxed">For firms with a larger client book, needing more folios per seat than Org allows.</p>
+          <ul class="space-y-2.5 text-sm text-slate-700 mb-8">
+            <li class="flex items-start gap-2"><span class="text-emerald-600 mt-0.5">&#10003;</span>All 10 reports &amp; PDF export</li>
+            <li class="flex items-start gap-2"><span class="text-emerald-600 mt-0.5">&#10003;</span>Up to 50 investor folios</li>
+            <li class="flex items-start gap-2"><span class="text-emerald-600 mt-0.5">&#10003;</span>Starts at 2 seats &mdash; add more anytime, billed per seat</li>
+            <li class="flex items-start gap-2"><span class="text-emerald-600 mt-0.5">&#10003;</span>Standalone Windows desktop install</li>
+            <li class="flex items-start gap-2"><span class="text-emerald-600 mt-0.5">&#10003;</span>Licensed for 3 months from activation per seat</li>
+          </ul>
+          <a href="#contact" class="inline-flex items-center justify-center w-full rounded-full grad-accent text-white text-sm font-semibold px-5 py-2.5 hover:opacity-90 transition-opacity">
+            Get pricing &amp; activate
+          </a>
+        </div>
+
+      </div>
+
+      <p class="mt-8 text-xs text-slate-500 max-w-3xl">All plans require a registered email address to activate &mdash; this is what the license is issued and bound to on your machine. Investor folio limits are enforced at import: once a plan's limit is reached, adding a new folio requires deleting an existing one first, which permanently clears that investor's data and reports.</p>
     </div>
   </section>
 
