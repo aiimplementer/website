@@ -59,72 +59,53 @@
  </head>
  <body class="antialiased bg-gray-900 text-gray-200">
   <!-- Navbar -->
-  <!-- Navbar -->
   <nav class="bg-gray-900 border-b border-gray-700 sticky top-0 z-50">
-   <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-3">
-    <div class="flex items-center space-x-3">
-     <a href="index.html">
-       <img alt="AI Implementer Logo" class="w-25 h-10 object-contain" src="images/ai-implementer-logo.png"/>
-     </a>
-    </div>
-    <div class="flex items-center space-x-6 text-sm font-medium">
-     <!-- Home -->
-     <a class="hover:text-cyan-400" href="index.html">
-      Home
-     </a>
-     <!-- About Dropdown -->
-     <div class="dropdown relative">
-      <a class="hover:text-cyan-400 focus:text-cyan-400 transition" href="#about">
-       About ▾
-      </a>
-      <div class="dropdown-content absolute hidden group-focus-within:block bg-gray-800 mt-2 rounded-lg shadow-lg">
-       <a class="block px-4 py-2 hover:bg-gray-700 hover:text-cyan-400" href="index.html#about">
-        About Me
-       </a>
-       <a class="block px-4 py-2 hover:bg-gray-700 hover:text-cyan-400" href="index.html#how">
-        How Do We Do
-       </a>
-       <a class="block px-4 py-2 hover:bg-gray-700 hover:text-cyan-400" href="index.html#help">
-        How I Help
-       </a>
-	   <!-- Blogs -->
-       <a class="block px-4 py-2 hover:bg-gray-700 hover:text-cyan-400" href="/posts/blog.html">
-       Blogs
-       </a>
+    <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-3">
+      <div class="flex items-center space-x-3">
+        <a href="index.html">
+          <img alt="AI Implementer Logo" class="w-25 h-10 object-contain" src="images/ai-implementer-logo.png"/>
+        </a>        
       </div>
-     </div>
-     <!-- Solutions Dropdown -->
-     <div class="dropdown relative">
-      <a class="hover:text-cyan-400 focus:text-cyan-400 transition" href="#solution">
-       AI Offerings ▾
-      </a>
-      <div class="dropdown-content absolute hidden group-focus-within:block bg-gray-800 mt-2 rounded-lg shadow-lg">
-       <a class="block px-4 py-2 hover:bg-gray-700 hover:text-cyan-400" href="index.html#services">
-        Services
-       </a>
-	   <a class="block px-4 py-2 hover:bg-gray-700 hover:text-cyan-400" href="index.html#solution">AI Solutions</a>
-       <a class="block px-4 py-2 hover:bg-gray-700 hover:text-cyan-400" href="index.html#solutions-overview">
-        Solutions Overview
-       </a>
-      </div>
-     </div>
-     <!-- Contact Dropdown -->
-     <div class="dropdown relative">
-      <a class="hover:text-cyan-400 focus:text-cyan-400 transition" href="#contact">
-       Contact ▾
-      </a>
-      <div class="dropdown-content absolute hidden group-focus-within:block bg-gray-800 mt-2 rounded-lg shadow-lg">
-       <a class="block px-4 py-2 hover:bg-gray-700 hover:text-cyan-400" href="faq.html">
-        FAQs
-       </a>
-	   <a class="block px-4 py-2 hover:bg-gray-700 hover:text-cyan-400" href="enquiry.html">
-        Send Enquiry
-       </a>
-       <a class="block px-4 py-2 hover:bg-gray-700 hover:text-cyan-400" href="index.html#contact">
-        Get in Touch
-       </a>
-      </div>
-     </div>
+      <div class="flex items-center space-x-6 text-sm font-medium">
+        <a href="index.html" class="hover:text-cyan-400">Home</a>
+
+        <div class="dropdown relative">
+          <a href="#about" class="hover:text-cyan-400 focus:text-cyan-400 transition">About ▾</a>
+          <div class="dropdown-content absolute hidden bg-gray-800 mt-2 rounded-lg shadow-lg">
+            <a href="index.html#about" class="block px-4 py-2 hover:bg-gray-700 hover:text-cyan-400">About Me</a>
+            <a href="index.html#how" class="block px-4 py-2 hover:bg-gray-700 hover:text-cyan-400">How Do We Do</a>
+            <a href="index.html#help" class="block px-4 py-2 hover:bg-gray-700 hover:text-cyan-400">How I Help</a>
+			<a href="/posts/blog.html" class="block px-4 py-2 hover:bg-gray-700 hover:text-cyan-400">Blogs</a>
+          </div>
+        </div>
+
+        <div class="dropdown relative">
+          <a href="#solution" class="hover:text-cyan-400 focus:text-cyan-400 transition">AI Offerings ▾</a>
+          <div class="dropdown-content absolute hidden bg-gray-800 mt-2 rounded-lg shadow-lg">
+            <a href="index.html#services" class="block px-4 py-2 hover:bg-gray-700 hover:text-cyan-400">Services</a>
+			<a class="block px-4 py-2 hover:bg-gray-700 hover:text-cyan-400" href="index.html#solution">AI Solutions</a>
+            <a href="index.html#solutions-overview" class="block px-4 py-2 hover:bg-gray-700 hover:text-cyan-400">Solutions Overview</a>
+          </div>
+        </div>
+		
+		<!-- Products Dropdown -->
+	    <div class="dropdown relative">
+		  <a class="hover:text-cyan-400 focus:text-cyan-400 transition" href="#products">Products ▾</a>
+			  <div class="dropdown-content absolute hidden group-focus-within:block bg-gray-800 mt-2 rounded-lg shadow-lg">
+			   <a class="block px-4 py-2 hover:bg-gray-700 hover:text-cyan-400" href="/Mutual Fund Portfolio Analyzer+">
+				Mutual Fund Portfolio Analyzer+
+			   </a>
+			  </div>
+	    </div>
+
+        <div class="dropdown relative">
+          <a href="#contact" class="hover:text-cyan-400 focus:text-cyan-400 transition">Contact ▾</a>
+          <div class="dropdown-content absolute hidden bg-gray-800 mt-2 rounded-lg shadow-lg">
+            <a href="faq.html" class="block px-4 py-2 hover:bg-gray-700 hover:text-cyan-400">FAQs</a>
+			<a class="block px-4 py-2 hover:bg-gray-700 hover:text-cyan-400" href="enquiry.html">Send Enquiry</a>
+            <a href="index.html#contact" class="block px-4 py-2 hover:bg-gray-700 hover:text-cyan-400">Get in Touch</a>
+          </div>
+        </div>
      
 	 <!-- Social Icons Starts-->	 
 	 <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
