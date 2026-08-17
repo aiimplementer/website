@@ -691,18 +691,37 @@
         <h2 class="text-3xl font-bold text-white tracking-tight">Get in touch</h2>
         <p class="mt-3 text-slate-400">Want a walkthrough, or ready to license Analyzer+ for your practice? Let's talk.</p>
       </div>
-      <div class="mt-10 grid sm:grid-cols-3 gap-6">
-        <div class="rounded-xl border border-white/10 bg-white/5 p-5">
-          <p class="text-xs font-semibold tracking-widest text-slate-400 uppercase mb-2">Email</p>
-          <a href="mailto:ai.implementer@gmail.com" class="text-white text-sm font-medium hover:text-emerald-400 transition-colors">ai.implementer@gmail.com</a>
+      <div class="mt-10 grid lg:grid-cols-2 gap-8 items-start">
+        <div class="grid sm:grid-cols-2 lg:grid-cols-1 gap-6">
+          <div class="rounded-xl border border-white/10 bg-white/5 p-5">
+            <p class="text-xs font-semibold tracking-widest text-slate-400 uppercase mb-2">Email</p>
+            <a href="mailto:ai.implementer@gmail.com" class="text-white text-sm font-medium hover:text-emerald-400 transition-colors">ai.implementer@gmail.com</a>
+          </div>
+          <div class="rounded-xl border border-white/10 bg-white/5 p-5">
+            <p class="text-xs font-semibold tracking-widest text-slate-400 uppercase mb-2">Call / WhatsApp</p>
+            <p class="text-white text-sm font-medium">+91 80875 58460</p>
+          </div>
         </div>
-        <div class="rounded-xl border border-white/10 bg-white/5 p-5">
-          <p class="text-xs font-semibold tracking-widest text-slate-400 uppercase mb-2">Call / WhatsApp</p>
-          <p class="text-white text-sm font-medium">+91 80875 58460</p>
-        </div>
-        <div class="rounded-xl border border-white/10 bg-white/5 p-5">
-          <p class="text-xs font-semibold tracking-widest text-slate-400 uppercase mb-2">Enquiry Form</p>
-          <a href="https://ai-implementer.netlify.app/enquiry" class="text-white text-sm font-medium hover:text-emerald-400 transition-colors">Send Enquiry &rarr;</a>
+
+        <!-- Enquiry Form (embedded, same submit handler as enquiry.html) -->
+        <div class="rounded-xl border border-white/10 bg-white/5 p-6 sm:p-8">
+          <p class="text-xs font-semibold tracking-widest text-slate-400 uppercase mb-4">Enquiry Form</p>
+          <form id="enquiryForm" class="space-y-4">
+            <div>
+              <label class="block text-left text-slate-300 text-sm mb-2" for="name">Name</label>
+              <input id="name" name="name" type="text" required class="w-full px-4 py-2 rounded-md bg-white/5 border border-white/10 focus:border-emerald-400 focus:outline-none text-white text-sm"/>
+            </div>
+            <div>
+              <label class="block text-left text-slate-300 text-sm mb-2" for="email">Email Address</label>
+              <input id="email" name="email" type="email" required class="w-full px-4 py-2 rounded-md bg-white/5 border border-white/10 focus:border-emerald-400 focus:outline-none text-white text-sm"/>
+            </div>
+            <div>
+              <label class="block text-left text-slate-300 text-sm mb-2" for="enquiry">Enquiry</label>
+              <textarea id="enquiry" name="enquiry" rows="4" required class="w-full px-4 py-2 rounded-md bg-white/5 border border-white/10 focus:border-emerald-400 focus:outline-none text-white text-sm">I would like to enquire about the Mutual Fund Portfolio Analyzer+ and understand how it could work for my portfolio. You may contact me via email at [your email] or by phone at [your phone number].</textarea>
+            </div>
+            <button type="submit" class="w-full rounded-full grad-accent text-white text-sm font-semibold px-5 py-2.5 hover:opacity-90 transition-opacity">Submit</button>
+          </form>
+          <p id="responseMessage" class="mt-4 text-emerald-400 text-sm font-semibold hidden">Thank you, we've received your enquiry. We'll get back to you shortly.</p>
         </div>
       </div>
     </div>
@@ -738,6 +757,33 @@
           dropdowns.forEach(d => d.classList.remove('active'));
         }
       });
+    });
+
+    <!-- enquiry form submit (same endpoint/logic as enquiry.html) -->
+    document.getElementById('enquiryForm').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const data = {
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        enquiry: document.getElementById('enquiry').value
+      };
+      const responseMessage = document.getElementById('responseMessage');
+      try {
+        await fetch('https://script.google.com/macros/s/AKfycbz4hkSWYzCvtXxxhavkb5R25TGkb7mf6-8KoaIOxrGA44C0Gc8VM_sj0c0yciJ2QwtqIg/exec', {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data)
+        });
+        responseMessage.textContent = "Thank you, we've received your enquiry. We'll get back to you shortly.";
+        responseMessage.classList.remove('hidden', 'text-red-400');
+        responseMessage.classList.add('text-emerald-400');
+        document.getElementById('enquiryForm').reset();
+      } catch (error) {
+        responseMessage.textContent = '⚠️ Something went wrong. Please try again.';
+        responseMessage.classList.remove('hidden', 'text-emerald-400');
+        responseMessage.classList.add('text-red-400');
+      }
     });
   </script>
 
