@@ -451,9 +451,9 @@
         <p class="mt-3 text-slate-600">Every plan runs the same standalone Windows app. What changes is how many investor folios you can hold at once &mdash; from your own household to a full client book.</p>
       </div>
       <div class="flex flex-wrap gap-x-6 gap-y-1 mb-10 text-xs text-slate-500">
-        <span><span class="text-navy-900 font-semibold">Solo</span> &mdash; Trial, Basic, Prime: 1 seat, billed flat per quarter</span>
+        <span><span class="text-navy-900 font-semibold">Solo</span> &mdash; Trial, Family, Family Prime: 1 seat, billed flat per quarter</span>
         <span aria-hidden="true">&middot;</span>
-        <span><span class="text-navy-900 font-semibold">Org</span> &mdash; Org, Org Prime: 2+ seats, billed per seat per quarter</span>
+        <span><span class="text-navy-900 font-semibold">Advisor</span> &mdash; Advisor, Advisor Prime, Enterprise: 2+ seats, billed per seat per quarter</span>
       </div>
 
       <!-- Solo tier row -->
@@ -481,7 +481,7 @@
         <div class="rounded-2xl border-2 border-navy-900 p-8 relative">
           <p class="absolute -top-3 right-6 rounded-full grad-accent text-white text-[11px] font-semibold px-3 py-1">Most popular</p>
           <p class="text-xs font-semibold tracking-widest text-slate-400 uppercase mb-2">Paid &middot; per quarter</p>
-          <h3 class="text-xl font-bold text-navy-900 mb-1">Basic</h3>
+          <h3 class="text-xl font-bold text-navy-900 mb-1">Family</h3>
           <p class="text-2xl font-bold text-navy-900 mb-3">&#8377;500<span class="text-sm font-medium text-slate-400"> / qtr</span></p>
           <p class="text-sm text-slate-600 mb-6 leading-relaxed">For a single investor &mdash; or a household of two, like you and your spouse.</p>
           <ul class="space-y-2.5 text-sm text-slate-700 mb-8">
@@ -497,7 +497,7 @@
 
         <div class="rounded-2xl border border-slate-200 p-8">
           <p class="text-xs font-semibold tracking-widest text-slate-400 uppercase mb-2">Paid &middot; per quarter</p>
-          <h3 class="text-xl font-bold text-navy-900 mb-1">Prime</h3>
+          <h3 class="text-xl font-bold text-navy-900 mb-1">Family Prime</h3>
           <p class="text-2xl font-bold text-navy-900 mb-3">&#8377;700<span class="text-sm font-medium text-slate-400"> / qtr</span></p>
           <p class="text-sm text-slate-600 mb-6 leading-relaxed">For a bigger household &mdash; parents, in-laws, or a few close family folios together.</p>
           <ul class="space-y-2.5 text-sm text-slate-700 mb-8">
@@ -513,13 +513,13 @@
 
       </div>
 
-      <!-- Org tier row -->
+      <!-- Advisor tier row -->
       <p class="text-xs font-semibold tracking-widest text-slate-400 uppercase mb-3">For advisors, firms &amp; family offices</p>
-      <div class="grid sm:grid-cols-2 gap-6">
+      <div class="grid sm:grid-cols-3 gap-6">
 
         <div class="rounded-2xl border border-slate-200 p-8">
           <p class="text-xs font-semibold tracking-widest text-slate-400 uppercase mb-2">Paid &middot; per seat, per quarter</p>
-          <h3 class="text-xl font-bold text-navy-900 mb-1">Org</h3>
+          <h3 class="text-xl font-bold text-navy-900 mb-1">Advisor</h3>
           <p class="text-2xl font-bold text-navy-900 mb-2">&#8377;2,500<span class="text-sm font-medium text-slate-400"> / seat / qtr</span></p>
           <p class="inline-block text-xs font-semibold text-navy-900 bg-amber-100 border border-amber-300 rounded-full px-3 py-1 mb-3">Starts from &#8377;5,000 / qtr at the 2-seat minimum</p>
           <p class="text-sm text-slate-600 mb-6 leading-relaxed">For advisors and small firms managing a client book &mdash; each client gets their own folio, reviewed separately or combined.</p>
@@ -538,10 +538,10 @@
         <div class="rounded-2xl border-2 border-navy-900 p-8 relative">
           <p class="absolute -top-3 right-6 rounded-full grad-accent text-white text-[11px] font-semibold px-3 py-1">For larger books</p>
           <p class="text-xs font-semibold tracking-widest text-slate-400 uppercase mb-2">Paid &middot; per seat, per quarter</p>
-          <h3 class="text-xl font-bold text-navy-900 mb-1">Org Prime</h3>
+          <h3 class="text-xl font-bold text-navy-900 mb-1">Advisor Prime</h3>
           <p class="text-2xl font-bold text-navy-900 mb-2">&#8377;5,000<span class="text-sm font-medium text-slate-400"> / seat / qtr</span></p>
           <p class="inline-block text-xs font-semibold text-navy-900 bg-amber-100 border border-amber-300 rounded-full px-3 py-1 mb-3">Starts from &#8377;10,000 / qtr at the 2-seat minimum</p>
-          <p class="text-sm text-slate-600 mb-6 leading-relaxed">For firms with a larger client book, needing more folios per seat than Org allows.</p>
+          <p class="text-sm text-slate-600 mb-6 leading-relaxed">For firms with a larger client book, needing more folios per seat than Advisor allows.</p>
           <ul class="space-y-2.5 text-sm text-slate-700 mb-8">
             <li class="flex items-start gap-2"><span class="text-emerald-600 mt-0.5">&#10003;</span>All 10 reports &amp; PDF export</li>
             <li class="flex items-start gap-2"><span class="text-emerald-600 mt-0.5">&#10003;</span>Up to 50 investor folios</li>
@@ -554,9 +554,133 @@
           </a>
         </div>
 
+        <div class="rounded-2xl border border-dashed border-slate-300 p-8 bg-white/60">
+          <p class="text-xs font-semibold tracking-widest text-slate-400 uppercase mb-2">Custom</p>
+          <h3 class="text-xl font-bold text-navy-900 mb-1">Enterprise</h3>
+          <p class="text-2xl font-bold text-navy-900 mb-3">Contact us</p>
+          <p class="text-sm text-slate-600 mb-6 leading-relaxed">For large advisory firms and family offices with more investor folios or seats than Advisor Prime covers.</p>
+          <ul class="space-y-2.5 text-sm text-slate-700 mb-8">
+            <li class="flex items-start gap-2"><span class="text-emerald-600 mt-0.5">&#10003;</span>All 10 reports &amp; PDF export</li>
+            <li class="flex items-start gap-2"><span class="text-emerald-600 mt-0.5">&#10003;</span>50+ investor folios</li>
+            <li class="flex items-start gap-2"><span class="text-emerald-600 mt-0.5">&#10003;</span>Seats &amp; billing tailored to your firm</li>
+            <li class="flex items-start gap-2"><span class="text-emerald-600 mt-0.5">&#10003;</span>Standalone Windows desktop install</li>
+          </ul>
+          <a href="#contact" class="inline-flex items-center justify-center w-full rounded-full border border-slate-300 text-navy-900 text-sm font-semibold px-5 py-2.5 hover:bg-slate-50 transition-colors">
+            Talk to us
+          </a>
+        </div>
+
       </div>
 
       <p class="mt-8 text-xs text-slate-500 max-w-3xl">All plans require a registered email address to activate &mdash; this is what the license is issued and bound to on your machine. Investor folio limits are enforced at import: once a plan's limit is reached, adding a new folio requires deleting an existing one first, which permanently clears that investor's data and reports.</p>
+
+      <details class="mt-10 group rounded-2xl border border-slate-200 bg-white shadow-sm overflow-hidden">
+        <summary class="cursor-pointer list-none flex items-center justify-between px-6 py-4 text-sm font-semibold text-navy-900 hover:bg-slate-50 transition-colors">
+          <span class="flex items-center gap-2">
+            <span class="text-slate-400">&#9776;</span>
+            Full plan comparison &amp; restrictions
+          </span>
+          <span class="flex items-center gap-2 text-xs font-medium text-slate-400">
+            <span class="hidden sm:inline">View all details</span>
+            <span class="transition-transform group-open:rotate-180">&#9660;</span>
+          </span>
+        </summary>
+        <div class="overflow-x-auto border-t border-slate-200">
+          <table class="w-full text-sm text-left border-collapse min-w-[820px]">
+            <thead>
+              <tr class="bg-navy-900 text-xs uppercase tracking-wide text-slate-300">
+                <th class="sticky left-0 bg-navy-900 px-4 py-3.5 font-semibold z-10">&nbsp;</th>
+                <th class="px-4 py-3.5 font-semibold text-emerald-400">Trial</th>
+                <th class="px-4 py-3.5 font-semibold text-white bg-white/5">Family</th>
+                <th class="px-4 py-3.5 font-semibold">Family Prime</th>
+                <th class="px-4 py-3.5 font-semibold">Advisor</th>
+                <th class="px-4 py-3.5 font-semibold">Advisor Prime</th>
+                <th class="px-4 py-3.5 font-semibold">Enterprise</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-100">
+              <tr class="odd:bg-white even:bg-slate-50/60 hover:bg-emerald-50/40 transition-colors">
+                <td class="sticky left-0 odd:bg-white even:bg-slate-50/60 px-4 py-3 font-semibold text-navy-900 z-10">Price</td>
+                <td class="px-4 py-3 font-bold text-emerald-600">Free</td>
+                <td class="px-4 py-3 font-bold text-navy-900 bg-navy-900/[0.03]">&#8377;500 / qtr</td>
+                <td class="px-4 py-3 font-bold text-navy-900">&#8377;700 / qtr</td>
+                <td class="px-4 py-3 font-bold text-navy-900">&#8377;2,500 / seat / qtr</td>
+                <td class="px-4 py-3 font-bold text-navy-900">&#8377;5,000 / seat / qtr</td>
+                <td class="px-4 py-3 font-bold text-navy-900">Contact us</td>
+              </tr>
+              <tr class="odd:bg-white even:bg-slate-50/60 hover:bg-emerald-50/40 transition-colors">
+                <td class="sticky left-0 odd:bg-white even:bg-slate-50/60 px-4 py-3 font-semibold text-navy-900 z-10">Billing cadence</td>
+                <td class="px-4 py-3 text-slate-600">7 days, one-time</td>
+                <td class="px-4 py-3 text-slate-600 bg-navy-900/[0.03]">Quarterly</td>
+                <td class="px-4 py-3 text-slate-600">Quarterly</td>
+                <td class="px-4 py-3 text-slate-600">Quarterly</td>
+                <td class="px-4 py-3 text-slate-600">Quarterly</td>
+                <td class="px-4 py-3 text-slate-600">Custom</td>
+              </tr>
+              <tr class="odd:bg-white even:bg-slate-50/60 hover:bg-emerald-50/40 transition-colors">
+                <td class="sticky left-0 odd:bg-white even:bg-slate-50/60 px-4 py-3 font-semibold text-navy-900 z-10">Seats</td>
+                <td class="px-4 py-3 text-slate-600">1</td>
+                <td class="px-4 py-3 text-slate-600 bg-navy-900/[0.03]">1</td>
+                <td class="px-4 py-3 text-slate-600">1</td>
+                <td class="px-4 py-3 text-slate-600">2 min, add anytime</td>
+                <td class="px-4 py-3 text-slate-600">2 min, add anytime</td>
+                <td class="px-4 py-3 text-slate-600">Custom</td>
+              </tr>
+              <tr class="odd:bg-white even:bg-slate-50/60 hover:bg-emerald-50/40 transition-colors">
+                <td class="sticky left-0 odd:bg-white even:bg-slate-50/60 px-4 py-3 font-semibold text-navy-900 z-10">Price at minimum seats</td>
+                <td class="px-4 py-3 text-slate-600">Free</td>
+                <td class="px-4 py-3 text-slate-600 bg-navy-900/[0.03]">&#8377;500 / qtr</td>
+                <td class="px-4 py-3 text-slate-600">&#8377;700 / qtr</td>
+                <td class="px-4 py-3"><span class="inline-block text-xs font-semibold text-navy-900 bg-amber-100 border border-amber-300 rounded-full px-2.5 py-0.5">&#8377;5,000 / qtr</span></td>
+                <td class="px-4 py-3"><span class="inline-block text-xs font-semibold text-navy-900 bg-amber-100 border border-amber-300 rounded-full px-2.5 py-0.5">&#8377;10,000 / qtr</span></td>
+                <td class="px-4 py-3 text-slate-400">&mdash;</td>
+              </tr>
+              <tr class="odd:bg-white even:bg-slate-50/60 hover:bg-emerald-50/40 transition-colors">
+                <td class="sticky left-0 odd:bg-white even:bg-slate-50/60 px-4 py-3 font-semibold text-navy-900 z-10">Investor folios (hard cap)</td>
+                <td class="px-4 py-3"><span class="inline-block text-xs font-bold text-emerald-700 bg-emerald-100 rounded-full px-2.5 py-0.5">1</span></td>
+                <td class="px-4 py-3 bg-navy-900/[0.03]"><span class="inline-block text-xs font-bold text-navy-900 bg-slate-200 rounded-full px-2.5 py-0.5">2</span></td>
+                <td class="px-4 py-3"><span class="inline-block text-xs font-bold text-navy-900 bg-slate-200 rounded-full px-2.5 py-0.5">5</span></td>
+                <td class="px-4 py-3 text-slate-600">30, fixed regardless of seat count</td>
+                <td class="px-4 py-3 text-slate-600">50, fixed regardless of seat count</td>
+                <td class="px-4 py-3 text-slate-600">50+</td>
+              </tr>
+              <tr class="odd:bg-white even:bg-slate-50/60 hover:bg-emerald-50/40 transition-colors">
+                <td class="sticky left-0 odd:bg-white even:bg-slate-50/60 px-4 py-3 font-semibold text-navy-900 z-10">Folio enforcement</td>
+                <td class="px-4 py-3 text-slate-600" colspan="5">Enforced at import &mdash; once the plan's limit is reached, adding a new folio requires deleting an existing investor first (this permanently clears that investor's data and reports)</td>
+                <td class="px-4 py-3 text-slate-600">Custom</td>
+              </tr>
+              <tr class="odd:bg-white even:bg-slate-50/60 hover:bg-emerald-50/40 transition-colors">
+                <td class="sticky left-0 odd:bg-white even:bg-slate-50/60 px-4 py-3 font-semibold text-navy-900 z-10">Reports viewable</td>
+                <td class="px-4 py-3 text-slate-600" colspan="6">&#10003; All 10 reports, on screen, on every plan</td>
+              </tr>
+              <tr class="odd:bg-white even:bg-slate-50/60 hover:bg-emerald-50/40 transition-colors">
+                <td class="sticky left-0 odd:bg-white even:bg-slate-50/60 px-4 py-3 font-semibold text-navy-900 z-10">PDF export</td>
+                <td class="px-4 py-3 text-amber-700 font-medium">Investor Summary only</td>
+                <td class="px-4 py-3 text-slate-600" colspan="5">&#10003; All 10 reports</td>
+              </tr>
+              <tr class="odd:bg-white even:bg-slate-50/60 hover:bg-emerald-50/40 transition-colors">
+                <td class="sticky left-0 odd:bg-white even:bg-slate-50/60 px-4 py-3 font-semibold text-navy-900 z-10">License activation</td>
+                <td class="px-4 py-3 text-slate-600" colspan="3">Registered email, no card required for Trial</td>
+                <td class="px-4 py-3 text-slate-600" colspan="2">Registered email, per seat</td>
+                <td class="px-4 py-3 text-slate-600">Custom</td>
+              </tr>
+              <tr class="odd:bg-white even:bg-slate-50/60 hover:bg-emerald-50/40 transition-colors">
+                <td class="sticky left-0 odd:bg-white even:bg-slate-50/60 px-4 py-3 font-semibold text-navy-900 z-10">Trial &rarr; paid upgrade</td>
+                <td class="px-4 py-3 text-slate-600" colspan="6">&#10003; Existing folio data carries over &mdash; no wipe when upgrading from Trial to any paid plan</td>
+              </tr>
+              <tr class="odd:bg-white even:bg-slate-50/60 hover:bg-emerald-50/40 transition-colors">
+                <td class="sticky left-0 odd:bg-white even:bg-slate-50/60 px-4 py-3 font-semibold text-navy-900 z-10">Typical buyer</td>
+                <td class="px-4 py-3 text-slate-500 italic">Anyone evaluating</td>
+                <td class="px-4 py-3 text-slate-500 italic bg-navy-900/[0.03]">Solo investor / couple</td>
+                <td class="px-4 py-3 text-slate-500 italic">Bigger family</td>
+                <td class="px-4 py-3 text-slate-500 italic">Small advisory firm</td>
+                <td class="px-4 py-3 text-slate-500 italic">Larger client book</td>
+                <td class="px-4 py-3 text-slate-500 italic">Very large firms</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </details>
     </div>
   </section>
 
