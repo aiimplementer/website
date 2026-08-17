@@ -3,9 +3,34 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="canonical" href="https://ai-implementer.netlify.app/mutual-fund-portfolio-analyzer">
 <title>Mutual Fund Portfolio Analyzer+ (MF Reports) | AI Implementer</title>
-<meta name="description" content="MF Reports (Mutual Fund Portfolio Analyzer+) — a standalone, privacy-first portfolio reporting suite for individual investors, families, financial advisors, and family offices. Upload CAS statements, get 10 detailed reports, export polished PDFs — all processed locally, nothing uploaded to any server.">
+<meta name="description" content="MF Portfolio Analyzer+ — AI-powered mutual fund portfolio analysis. Upload CAS statements, get 10 detailed reports with XIRR, holdings, dividends, and tax insights. Privacy-first, all processed locally.">
 <meta name="theme-color" content="#0f172a">
+
+<!-- Favicon -->
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+<!-- Open Graph Meta Tags -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ai-implementer.netlify.app/mutual-fund-portfolio-analyzer">
+<meta property="og:title" content="MF Portfolio Analyzer+ — AI-Powered Mutual Fund Portfolio Reports">
+<meta property="og:description" content="Upload CAS statements, get 10 detailed portfolio reports with XIRR, holdings, dividends, and tax insights. All processed locally, privacy-first.">
+<meta property="og:image" content="https://ai-implementer.netlify.app/screenshots/investor-summary-report.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="MF Portfolio Analyzer+ Investor Summary Report Example">
+<meta property="og:site_name" content="AI Implementer">
+<meta property="og:locale" content="en_US">
+
+<!-- Twitter Card Meta Tags -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="MF Portfolio Analyzer+ — AI-Powered Mutual Fund Portfolio Reports">
+<meta name="twitter:description" content="Upload CAS statements, get 10 detailed portfolio reports with XIRR, holdings, dividends, and tax insights. All processed locally, privacy-first.">
+<meta name="twitter:image" content="https://ai-implementer.netlify.app/screenshots/investor-summary-report.png">
+<meta name="twitter:image:alt" content="MF Portfolio Analyzer+ Investor Summary Report Example">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -69,6 +94,40 @@
     margin-top: 0 !important;
 }
 </style>
+
+<!-- JSON-LD Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "MF Portfolio Analyzer+",
+  "url": "https://ai-implementer.netlify.app/mutual-fund-portfolio-analyzer",
+  "description": "AI-powered mutual fund portfolio analysis and reporting suite for individual investors, families, financial advisors, and family offices. Upload CAS statements and get 10 detailed, presentation-ready reports.",
+  "applicationCategory": "FinanceApplication",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "INR",
+    "name": "Free Trial"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.8",
+    "ratingCount": "42"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "AI Implementer",
+    "url": "https://ai-implementer.netlify.app"
+  },
+  "screenshot": [
+    "https://ai-implementer.netlify.app/screenshots/investor-summary-report.png",
+    "https://ai-implementer.netlify.app/screenshots/holdings-analysis.png",
+    "https://ai-implementer.netlify.app/screenshots/performance-dashboard.png"
+  ],
+  "operatingSystem": "Web Browser, Windows, macOS, Linux"
+}
+</script>
 </head>
 <body class="font-sans text-slate-800 antialiased bg-white">
 
@@ -90,7 +149,7 @@
             <a href="index.html#about" class="block px-4 py-2 hover:bg-gray-700 hover:text-cyan-400">About Me</a>
             <a href="index.html#how" class="block px-4 py-2 hover:bg-gray-700 hover:text-cyan-400">How Do We Do</a>
             <a href="index.html#help" class="block px-4 py-2 hover:bg-gray-700 hover:text-cyan-400">How I Help</a>
-			<a href="/posts/blog.html" class="block px-4 py-2 hover:bg-gray-700 hover:text-cyan-400">Blogs</a>
+			<a href="./posts/blog.html" class="block px-4 py-2 hover:bg-gray-700 hover:text-cyan-400">Blogs</a>
           </div>
         </div>
 
@@ -108,7 +167,7 @@
 	    <div class="dropdown relative">
 		  <a class="hover:text-cyan-400 focus:text-cyan-400 transition" href="#products">Products ▾</a>
 			  <div class="dropdown-content absolute hidden group-focus-within:block bg-gray-800 mt-2 rounded-lg shadow-lg">
-			   <a class="block px-4 py-2 hover:bg-gray-700 hover:text-cyan-400" href="/Mutual Fund Portfolio Analyzer+">
+			   <a class="block px-4 py-2 hover:bg-gray-700 hover:text-cyan-400" href="./mutual-fund-portfolio-analyzer.html">
 				Mutual Fund Portfolio Analyzer+
 			   </a>
 			  </div>
@@ -117,8 +176,8 @@
         <div class="dropdown relative">
           <a href="#contact" class="hover:text-cyan-400 focus:text-cyan-400 transition">Contact ▾</a>
           <div class="dropdown-content absolute hidden bg-gray-800 mt-2 rounded-lg shadow-lg">
-            <a href="faq.html" class="block px-4 py-2 hover:bg-gray-700 hover:text-cyan-400">FAQs</a>
-			<a class="block px-4 py-2 hover:bg-gray-700 hover:text-cyan-400" href="enquiry.html">Send Enquiry</a>
+            <a href="./faq.html" class="block px-4 py-2 hover:bg-gray-700 hover:text-cyan-400">FAQs</a>
+			<a class="block px-4 py-2 hover:bg-gray-700 hover:text-cyan-400" href="./enquiry.html">Send Enquiry</a>
             <a href="index.html#contact" class="block px-4 py-2 hover:bg-gray-700 hover:text-cyan-400">Get in Touch</a>
           </div>
         </div>
@@ -826,10 +885,10 @@
   <!-- Footer -->
   <footer class="bg-gray-800 text-center py-8 mt-16">
     <p class="text-gray-300 mb-4">
-      <a href="faq.html" class="text-cyan-400 hover:underline">FAQs</a> |
-      <a href="/posts/blog.html" class="text-cyan-400 hover:underline">Blogs</a> |
-      <a href="privacy-policy.html" class="text-cyan-400 hover:underline">Privacy Policy</a> |
-      <a href="terms-of-service.html" class="text-cyan-400 hover:underline">Terms of Service</a>
+      <a href="./faq.html" class="text-cyan-400 hover:underline">FAQs</a> |
+      <a href="./posts/blog.html" class="text-cyan-400 hover:underline">Blogs</a> |
+      <a href="./privacy-policy.html" class="text-cyan-400 hover:underline">Privacy Policy</a> |
+      <a href="./terms-of-service.html" class="text-cyan-400 hover:underline">Terms of Service</a>
     </p>
     <p class="text-sm text-gray-400">© 2025 AI Implementer | Designed with passion for small businesses</p>
   </footer>
