@@ -222,7 +222,7 @@
           <a href="#editions" class="inline-flex items-center justify-center rounded-full grad-accent text-white text-sm font-semibold px-6 py-3 shadow-lg shadow-blue-950/40 hover:opacity-90 transition-opacity">
             See Plans &amp; Pricing
           </a>
-          <a href="#editions" class="inline-flex items-center justify-center rounded-full border border-white/20 text-white text-sm font-semibold px-6 py-3 hover:bg-white/10 transition-colors">
+          <a href="#contact" class="trial-cta inline-flex items-center justify-center rounded-full border border-white/20 text-white text-sm font-semibold px-6 py-3 hover:bg-white/10 transition-colors">
             Start Free 7-Day Trial &rarr;
           </a>
           <button type="button" class="open-download-modal inline-flex items-center justify-center rounded-full border border-white/20 text-white text-sm font-semibold px-6 py-3 hover:bg-white/10 transition-colors">
@@ -630,7 +630,7 @@
             <li class="flex items-start gap-2"><span class="text-slate-400 mt-0.5">&#8212;</span>Other 9 reports are view-only &mdash; upgrade to export as PDF</li>
             <li class="flex items-start gap-2"><span class="text-slate-400 mt-0.5">&#8212;</span>Access ends automatically after 7 days</li>
           </ul>
-          <a href="#contact" class="inline-flex items-center justify-center w-full rounded-full bg-emerald-600 text-white text-sm font-semibold px-5 py-2.5 hover:bg-emerald-700 transition-colors">
+          <a href="#contact" class="trial-cta inline-flex items-center justify-center w-full rounded-full bg-emerald-600 text-white text-sm font-semibold px-5 py-2.5 hover:bg-emerald-700 transition-colors">
             Start free trial
           </a>
         </div>
@@ -875,7 +875,7 @@
 
         <!-- Enquiry Form (embedded, same submit handler as enquiry.html) -->
         <div class="rounded-xl border border-white/10 bg-white/5 p-6 sm:p-8">
-          <p class="text-xs font-semibold tracking-widest text-slate-400 uppercase mb-4">Enquiry Form</p>
+          <p id="formHeading" class="text-xs font-semibold tracking-widest text-slate-400 uppercase mb-4">Enquiry Form</p>
           <form id="enquiryForm" class="space-y-4">
             <div>
               <label class="block text-left text-slate-300 text-sm mb-2" for="name">Name</label>
@@ -980,6 +980,23 @@
     contactLink.addEventListener('click', closeModal);
     document.addEventListener('keydown', function(e) {
       if (e.key === 'Escape') closeModal();
+    });
+  })();
+
+  <!-- trial CTA prefill -->
+  (function() {
+    const trialLinks = document.querySelectorAll('.trial-cta');
+    const enquiryField = document.getElementById('enquiry');
+    const formHeading = document.getElementById('formHeading');
+    const submitBtn = document.querySelector('#enquiryForm button[type="submit"]');
+    if (!trialLinks.length || !enquiryField) return;
+    const trialText = "I would like to request Free Account Activation for the Mutual Fund Portfolio Analyzer+ 7-day Trial. You may contact me via email at [your email] or by phone at [your phone number].";
+    trialLinks.forEach(function(link) {
+      link.addEventListener('click', function() {
+        enquiryField.value = trialText;
+        if (formHeading) formHeading.textContent = 'Request for Free Trial';
+        if (submitBtn) submitBtn.textContent = 'Request Trial Activation';
+      });
     });
   })();
 
