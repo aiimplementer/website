@@ -1,0 +1,58 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:12.000
+Creating an account with the email the license was purchased under.
+
+00:00:12.000 --> 00:00:20.000
+Heading to Upload CAS to add the first investor's statement.
+
+00:00:20.000 --> 00:00:32.000
+Selecting the CAS PDF — statement type, folio listing, and period all matter for accurate XIRR.
+
+00:00:32.000 --> 00:00:42.000
+Processing the statement: parsing transactions, resolving folios, and fetching NAVs.
+
+00:00:42.000 --> 00:00:55.000
+Processing complete — file processed successfully, redirecting to the dashboard.
+
+00:00:55.000 --> 00:01:20.000
+Investor Summary: category-wise value, top 3 earning funds by XIRR, and dividend income at a glance.
+
+00:01:20.000 --> 00:01:50.000
+Portfolio Analytics: year-by-year invested vs. redeemed, plus fund-wise concentration and investment discipline.
+
+00:01:50.000 --> 00:02:10.000
+Fund Widgets: a snapshot card for every scheme — value, XIRR, and % of folio.
+
+00:02:10.000 --> 00:02:30.000
+Transactions and Cash Flow, organized month by month.
+
+00:02:30.000 --> 00:02:45.000
+Uploading a second investor's CAS statement — this plan supports up to two folios.
+
+00:02:45.000 --> 00:03:10.000
+Combined Investor Summary Report across both portfolios — net investment, gain/loss, and blended XIRR.
+
+00:03:10.000 --> 00:03:35.000
+Dividend Income and Cash Flow, now aggregated across both investors.
+
+00:03:35.000 --> 00:03:55.000
+Capital Gains Report: realized gains with short-term and long-term splits, lot by lot.
+
+00:03:55.000 --> 00:04:15.000
+Fund Widgets Report, exported for the combined portfolio.
+
+00:04:15.000 --> 00:04:35.000
+Mutual Fund Aggregation Report — a full portfolio summary across all investors.
+
+00:04:35.000 --> 00:04:55.000
+Signing back in — statements and holdings stay saved locally on this device.
+
+00:04:55.000 --> 00:05:12.000
+Refreshing NAVs — a one-click pipeline scans the database and updates today's fund prices.
+
+00:05:12.000 --> 00:05:22.000
+All four stages complete — NAVs refreshed across every fund and folio in seconds.
+
+00:05:22.000 --> 00:05:31.966
+Back to Transactions — a clean, month-wise record of every purchase and redemption.
