@@ -892,6 +892,66 @@
   </section>
 
   <!-- ================= WHITE LABEL / PARTNERSHIPS ================= -->
+  <!-- ================= WHITE-LABEL EXAMPLES ================= -->
+  <section id="white-label" class="bg-white">
+    <div class="max-w-6xl mx-auto px-6 py-20">
+      <div class="max-w-2xl mb-12">
+        <div class="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-slate-50 px-3.5 py-1.5 text-xs font-medium text-slate-500 mb-5">
+          <span class="h-1.5 w-1.5 rounded-full bg-emerald-500"></span>
+          Same engine, your brand
+        </div>
+        <h2 class="text-3xl font-bold text-navy-900 tracking-tight">White-label, out of the box</h2>
+        <p class="mt-3 text-slate-600">Your app name, your logo, your color palette &mdash; the same reports and engine underneath. Three real rebrands of this exact app, shown below.</p>
+      </div>
+
+      <div class="relative">
+        <div class="overflow-hidden rounded-2xl border border-slate-200 shadow-lg bg-navy-950" id="wlViewport">
+          <div class="flex transition-transform duration-500 ease-in-out" id="wlTrack">
+
+            <figure class="w-full flex-shrink-0 m-0">
+              <div class="grid sm:grid-cols-2 gap-3 p-4">
+                <img src="images/white-label-wealthlens-navy-login.png" alt="Wealth Lens white-label sign-in screen in a dark navy theme" width="1365" height="721" loading="eager" class="w-full h-auto block rounded-lg border border-white/10" />
+                <img src="images/white-label-wealthlens-navy-dashboard.png" alt="Wealth Lens white-label dashboard in a dark navy theme, showing the Investor Summary Report" width="1365" height="721" loading="eager" class="w-full h-auto block rounded-lg border border-white/10" />
+              </div>
+              <figcaption class="p-5 pt-2 bg-white">
+                <h3 class="font-semibold text-navy-900">&ldquo;Wealth Lens&rdquo; &mdash; navy theme</h3>
+                <p class="text-sm text-slate-600 mt-1">New name, new logo, its own dark navy palette. Same Investor Summary, XIRR, and report engine underneath.</p>
+              </figcaption>
+            </figure>
+
+            <figure class="w-full flex-shrink-0 m-0">
+              <div class="grid sm:grid-cols-2 gap-3 p-4">
+                <img src="images/white-label-wealthlens-amber-login.png" alt="Wealth Lens white-label sign-in screen in an amber theme" width="1365" height="721" loading="lazy" class="w-full h-auto block rounded-lg border border-white/10" />
+                <img src="images/white-label-wealthlens-amber-dashboard.png" alt="Wealth Lens white-label dashboard in an amber theme, showing the Investor Summary Report" width="1365" height="721" loading="lazy" class="w-full h-auto block rounded-lg border border-white/10" />
+              </div>
+              <figcaption class="p-5 pt-2 bg-white">
+                <h3 class="font-semibold text-navy-900">Same &ldquo;Wealth Lens&rdquo; build &mdash; amber theme</h3>
+                <p class="text-sm text-slate-600 mt-1">One codebase, a completely different color identity applied on top &mdash; no rebuild required.</p>
+              </figcaption>
+            </figure>
+
+            <figure class="w-full flex-shrink-0 m-0">
+              <div class="grid sm:grid-cols-2 gap-3 p-4">
+                <img src="images/white-label-mfportfolio-login.png" alt="MF Portfolio Analyzer+ sign-in screen in the default black and white theme" width="1365" height="721" loading="lazy" class="w-full h-auto block rounded-lg border border-white/10" />
+                <img src="images/white-label-mfportfolio-dashboard.png" alt="MF Portfolio Analyzer+ dashboard in the default theme, showing the Investor Summary Report" width="1365" height="721" loading="lazy" class="w-full h-auto block rounded-lg border border-white/10" />
+              </div>
+              <figcaption class="p-5 pt-2 bg-white">
+                <h3 class="font-semibold text-navy-900">MF Portfolio Analyzer+ &mdash; the default build</h3>
+                <p class="text-sm text-slate-600 mt-1">What you get out of the box under the AI Implementer brand, before any white-label customization.</p>
+              </figcaption>
+            </figure>
+
+          </div>
+        </div>
+
+        <button id="wlPrevSlide" type="button" aria-label="Previous example" class="absolute left-2 top-1/2 -translate-y-1/2 -mt-8 sm:-mt-12 grid place-items-center w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white/90 border border-slate-200 shadow hover:bg-white text-navy-900 text-lg font-bold">&#8249;</button>
+        <button id="wlNextSlide" type="button" aria-label="Next example" class="absolute right-2 top-1/2 -translate-y-1/2 -mt-8 sm:-mt-12 grid place-items-center w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white/90 border border-slate-200 shadow hover:bg-white text-navy-900 text-lg font-bold">&#8250;</button>
+
+        <div class="flex justify-center flex-wrap gap-2 mt-5" id="wlDots"></div>
+      </div>
+    </div>
+  </section>
+
   <section id="partner" class="bg-white">
     <div class="max-w-6xl mx-auto px-6 py-20">
       <div class="rounded-2xl border border-slate-200 bg-slate-50 overflow-hidden">
@@ -1099,20 +1159,20 @@
       });
     });
 
-    <!-- screenshot carousel -->
-    (function() {
-      const viewport = document.getElementById('screenshotViewport');
-      const track = document.getElementById('screenshotTrack');
+    <!-- reusable carousel (used by both the screenshot carousel and the white-label examples carousel) -->
+    function initCarousel(opts) {
+      const viewport = document.getElementById(opts.viewport);
+      const track = document.getElementById(opts.track);
       if (!viewport || !track) return;
       const slides = Array.from(track.children);
-      const dotsWrap = document.getElementById('screenshotDots');
+      const dotsWrap = document.getElementById(opts.dots);
       let index = 0;
       let autoTimer = null;
 
       slides.forEach((_, i) => {
         const dot = document.createElement('button');
         dot.type = 'button';
-        dot.setAttribute('aria-label', 'Go to screenshot ' + (i + 1));
+        dot.setAttribute('aria-label', 'Go to slide ' + (i + 1));
         dot.className = 'w-2.5 h-2.5 rounded-full transition-colors ' + (i === 0 ? 'bg-navy-900' : 'bg-slate-300 hover:bg-slate-400');
         dot.addEventListener('click', () => goTo(i));
         dotsWrap.appendChild(dot);
@@ -1132,10 +1192,10 @@
       function next() { goTo(index + 1); }
       function prev() { goTo(index - 1); }
 
-      document.getElementById('nextSlide').addEventListener('click', () => { next(); restartAuto(); });
-      document.getElementById('prevSlide').addEventListener('click', () => { prev(); restartAuto(); });
+      document.getElementById(opts.next).addEventListener('click', () => { next(); restartAuto(); });
+      document.getElementById(opts.prev).addEventListener('click', () => { prev(); restartAuto(); });
 
-      function startAuto() { autoTimer = setInterval(next, 5000); }
+      function startAuto() { autoTimer = setInterval(next, opts.interval || 5000); }
       function restartAuto() { if (autoTimer) clearInterval(autoTimer); startAuto(); }
       viewport.addEventListener('mouseenter', () => autoTimer && clearInterval(autoTimer));
       viewport.addEventListener('mouseleave', startAuto);
@@ -1152,7 +1212,10 @@
 
       render();
       startAuto();
-    })();
+    }
+
+    initCarousel({ viewport: 'screenshotViewport', track: 'screenshotTrack', dots: 'screenshotDots', prev: 'prevSlide', next: 'nextSlide' });
+    initCarousel({ viewport: 'wlViewport', track: 'wlTrack', dots: 'wlDots', prev: 'wlPrevSlide', next: 'wlNextSlide', interval: 6000 });
 
     <!-- enquiry form submit (same endpoint/logic as enquiry.html) -->
     document.getElementById('enquiryForm').addEventListener('submit', async function(e) {
