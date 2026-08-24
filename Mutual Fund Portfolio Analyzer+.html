@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="canonical" href="https://ai-implementer.netlify.app/mutual-fund-portfolio-analyzer">
 <title>Mutual Fund Portfolio Analyzer+ (MF Reports) | AI Implementer</title>
-<meta name="description" content="MF Portfolio Analyzer+ — Mutual fund portfolio analysis. Upload CAS statements, get 10 detailed reports with XIRR, holdings, dividends, and tax insights. Privacy-first, all processed locally.">
+<meta name="description" content="MF Portfolio Analyzer+ — Mutual fund portfolio analysis. Upload CAS statements, get 11 detailed reports with XIRR, holdings, dividends, and tax insights. Privacy-first, all processed locally.">
 <meta name="theme-color" content="#0f172a">
 
 <!-- Favicon -->
@@ -16,7 +16,7 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://ai-implementer.netlify.app/mutual-fund-portfolio-analyzer">
 <meta property="og:title" content="MF Portfolio Analyzer+ — Mutual Fund Portfolio Reports">
-<meta property="og:description" content="Upload CAS statements, get 10 detailed portfolio reports with XIRR, holdings, dividends, and tax insights. All processed locally, privacy-first.">
+<meta property="og:description" content="Upload CAS statements, get 11 detailed portfolio reports with XIRR, holdings, dividends, and tax insights. All processed locally, privacy-first.">
 <meta property="og:image" content="https://ai-implementer.netlify.app/screenshots/investor-summary-report.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -27,7 +27,7 @@
 <!-- Twitter Card Meta Tags -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="MF Portfolio Analyzer+ — Mutual Fund Portfolio Reports">
-<meta name="twitter:description" content="Upload CAS statements, get 10 detailed portfolio reports with XIRR, holdings, dividends, and tax insights. All processed locally, privacy-first.">
+<meta name="twitter:description" content="Upload CAS statements, get 11 detailed portfolio reports with XIRR, holdings, dividends, and tax insights. All processed locally, privacy-first.">
 <meta name="twitter:image" content="https://ai-implementer.netlify.app/images/mf-portfolio-report.png">
 <meta name="twitter:image:alt" content="MF Portfolio Analyzer+ Investor Summary Report Example">
 
@@ -112,7 +112,7 @@
   "@type": "SoftwareApplication",
   "name": "MF Portfolio Analyzer+",
   "url": "https://ai-implementer.netlify.app/mutual-fund-portfolio-analyzer",
-  "description": "Mutual fund portfolio analysis and reporting suite for individual investors, families, financial advisors, and family offices. Upload CAS statements and get 10 detailed, presentation-ready reports.",
+  "description": "Mutual fund portfolio analysis and reporting suite for individual investors, families, financial advisors, and family offices. Upload CAS statements and get 11 detailed, presentation-ready reports.",
   "applicationCategory": "FinanceApplication",
   "offers": {
     "@type": "Offer",
@@ -354,7 +354,7 @@
   <section class="bg-white">
     <div class="max-w-6xl mx-auto px-6 py-20">
       <div class="max-w-xl mb-12">
-        <h2 class="text-3xl font-bold text-navy-900 tracking-tight">10 reports, one dashboard</h2>
+        <h2 class="text-3xl font-bold text-navy-900 tracking-tight">11 reports, one dashboard</h2>
         <p class="mt-3 text-slate-600">Every angle on a portfolio an advisor or investor actually needs &mdash; not just a single summary page.</p>
       </div>
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -374,6 +374,10 @@
         <div class="rounded-xl border border-slate-200 p-5">
           <h3 class="font-semibold text-navy-900 text-sm mb-1">Fund Aggregation</h3>
           <p class="text-xs text-slate-600 leading-relaxed">Current holdings fund-by-fund, with sector-wise allocation.</p>
+        </div>
+        <div class="rounded-xl border border-slate-200 p-5">
+          <h3 class="font-semibold text-navy-900 text-sm mb-1">Fund Type Mix &amp; Suggested Allocation <span class="ml-1 align-middle text-[10px] font-semibold text-emerald-700 bg-emerald-50 border border-emerald-200 rounded-full px-1.5 py-0.5">New</span></h3>
+          <p class="text-xs text-slate-600 leading-relaxed">Your current mix by fund type &mdash; Debt, Hybrid, Large &amp; Mid Cap, Multi/Flexi Cap and more &mdash; compared against a Conservative, Balanced, or Aggressive model allocation.</p>
         </div>
         <div class="rounded-xl border border-slate-200 p-5">
           <h3 class="font-semibold text-navy-900 text-sm mb-1">Fund Performance</h3>
@@ -473,6 +477,14 @@
             </figure>
 
             <figure class="w-full flex-shrink-0 m-0">
+              <img src="images/cap-allocation-report.png" alt="Fund Type Mix and Suggested Allocation report comparing current holdings by cap tier against a Conservative, Balanced or Aggressive model allocation" width="1365" height="720" loading="lazy" class="w-full h-auto block border-b border-slate-100" />
+              <figcaption class="p-5">
+                <h3 class="font-semibold text-navy-900">Fund Type Mix &amp; Suggested Allocation</h3>
+                <p class="text-sm text-slate-600 mt-1">Your current mix by fund type, benchmarked against a Conservative, Balanced, or Aggressive suggested model &mdash; with a target-vs-actual view for each.</p>
+              </figcaption>
+            </figure>
+
+            <figure class="w-full flex-shrink-0 m-0">
               <img src="images/fund-performance-report.png" alt="Fund Performance report with a combined bar and line chart of invested amount, current value and XIRR for every fund" width="1365" height="717" loading="lazy" class="w-full h-auto block border-b border-slate-100" />
               <figcaption class="p-5">
                 <h3 class="font-semibold text-navy-900">Fund Performance</h3>
@@ -543,7 +555,7 @@
         </div>
         <div>
           <div class="h-9 w-9 rounded-full bg-navy-900 text-white text-sm font-bold flex items-center justify-center mb-4">3</div>
-          <h3 class="font-semibold text-navy-900 mb-1.5 text-sm">Explore 10 reports</h3>
+          <h3 class="font-semibold text-navy-900 mb-1.5 text-sm">Explore 11 reports</h3>
           <p class="text-sm text-slate-600 leading-relaxed">Every report renders live, filterable by folio or client.</p>
         </div>
         <div>
@@ -660,11 +672,11 @@
           <h3 class="text-xl font-bold text-navy-900 mb-3">Trial</h3>
           <p class="text-sm text-slate-600 mb-6 leading-relaxed">Try it free for 7 days &mdash; explore every report on one investor folio, and export your Investor Summary as PDF.</p>
           <ul class="space-y-2.5 text-sm text-slate-700 mb-8">
-            <li class="flex items-start gap-2"><span class="text-emerald-600 mt-0.5">&#10003;</span>All 10 reports viewable on screen</li>
+            <li class="flex items-start gap-2"><span class="text-emerald-600 mt-0.5">&#10003;</span>All 11 reports viewable on screen</li>
             <li class="flex items-start gap-2"><span class="text-emerald-600 mt-0.5">&#10003;</span>PDF export for Investor Summary</li>
             <li class="flex items-start gap-2"><span class="text-emerald-600 mt-0.5">&#10003;</span>1 investor folio</li>
             <li class="flex items-start gap-2"><span class="text-emerald-600 mt-0.5">&#10003;</span>Registered email activates the license &mdash; no card required</li>
-            <li class="flex items-start gap-2"><span class="text-slate-400 mt-0.5">&#8212;</span>Other 9 reports are view-only &mdash; upgrade to export as PDF</li>
+            <li class="flex items-start gap-2"><span class="text-slate-400 mt-0.5">&#8212;</span>Other 10 reports are view-only &mdash; upgrade to export as PDF</li>
             <li class="flex items-start gap-2"><span class="text-slate-400 mt-0.5">&#8212;</span>Access ends automatically after 7 days</li>
           </ul>
           <a href="#contact" class="trial-cta inline-flex items-center justify-center w-full rounded-full bg-emerald-600 text-white text-sm font-semibold px-5 py-2.5 hover:bg-emerald-700 transition-colors">
@@ -679,7 +691,7 @@
           <p class="text-2xl font-bold text-navy-900 mb-3">&#8377;500<span class="text-sm font-medium text-slate-400"> / qtr</span></p>
           <p class="text-sm text-slate-600 mb-6 leading-relaxed">For a single investor &mdash; or a household of two, like you and your spouse.</p>
           <ul class="space-y-2.5 text-sm text-slate-700 mb-8">
-            <li class="flex items-start gap-2"><span class="text-emerald-600 mt-0.5">&#10003;</span>All 10 reports &amp; PDF export</li>
+            <li class="flex items-start gap-2"><span class="text-emerald-600 mt-0.5">&#10003;</span>All 11 reports &amp; PDF export</li>
             <li class="flex items-start gap-2"><span class="text-emerald-600 mt-0.5">&#10003;</span>Up to 2 investor folios</li>
             <li class="flex items-start gap-2"><span class="text-emerald-600 mt-0.5">&#10003;</span>Standalone Windows desktop install</li>
             <li class="flex items-start gap-2"><span class="text-emerald-600 mt-0.5">&#10003;</span>Licensed for 3 months from activation, tied to your registered email</li>
@@ -695,7 +707,7 @@
           <p class="text-2xl font-bold text-navy-900 mb-3">&#8377;700<span class="text-sm font-medium text-slate-400"> / qtr</span></p>
           <p class="text-sm text-slate-600 mb-6 leading-relaxed">For a bigger household &mdash; parents, in-laws, or a few close family folios together.</p>
           <ul class="space-y-2.5 text-sm text-slate-700 mb-8">
-            <li class="flex items-start gap-2"><span class="text-emerald-600 mt-0.5">&#10003;</span>All 10 reports &amp; PDF export</li>
+            <li class="flex items-start gap-2"><span class="text-emerald-600 mt-0.5">&#10003;</span>All 11 reports &amp; PDF export</li>
             <li class="flex items-start gap-2"><span class="text-emerald-600 mt-0.5">&#10003;</span>Up to 5 investor folios</li>
             <li class="flex items-start gap-2"><span class="text-emerald-600 mt-0.5">&#10003;</span>Standalone Windows desktop install</li>
             <li class="flex items-start gap-2"><span class="text-emerald-600 mt-0.5">&#10003;</span>Licensed for 3 months from activation, tied to your registered email</li>
@@ -718,7 +730,7 @@
           <p class="inline-block text-xs font-semibold text-navy-900 bg-amber-100 border border-amber-300 rounded-full px-3 py-1 mb-3">Starts from &#8377;5,000 / qtr at the 2-seat minimum</p>
           <p class="text-sm text-slate-600 mb-6 leading-relaxed">For advisors and small firms managing a client book &mdash; each client gets their own folio, reviewed separately or combined.</p>
           <ul class="space-y-2.5 text-sm text-slate-700 mb-8">
-            <li class="flex items-start gap-2"><span class="text-emerald-600 mt-0.5">&#10003;</span>All 10 reports &amp; PDF export</li>
+            <li class="flex items-start gap-2"><span class="text-emerald-600 mt-0.5">&#10003;</span>All 11 reports &amp; PDF export</li>
             <li class="flex items-start gap-2"><span class="text-emerald-600 mt-0.5">&#10003;</span>Up to 30 investor folios</li>
             <li class="flex items-start gap-2"><span class="text-emerald-600 mt-0.5">&#10003;</span>Starts at 2 seats &mdash; add more anytime, billed per seat</li>
             <li class="flex items-start gap-2"><span class="text-emerald-600 mt-0.5">&#10003;</span>Standalone Windows desktop install</li>
@@ -737,7 +749,7 @@
           <p class="inline-block text-xs font-semibold text-navy-900 bg-amber-100 border border-amber-300 rounded-full px-3 py-1 mb-3">Starts from &#8377;10,000 / qtr at the 2-seat minimum</p>
           <p class="text-sm text-slate-600 mb-6 leading-relaxed">For firms with a larger client book, needing more folios per seat than Advisor allows.</p>
           <ul class="space-y-2.5 text-sm text-slate-700 mb-8">
-            <li class="flex items-start gap-2"><span class="text-emerald-600 mt-0.5">&#10003;</span>All 10 reports &amp; PDF export</li>
+            <li class="flex items-start gap-2"><span class="text-emerald-600 mt-0.5">&#10003;</span>All 11 reports &amp; PDF export</li>
             <li class="flex items-start gap-2"><span class="text-emerald-600 mt-0.5">&#10003;</span>Up to 50 investor folios</li>
             <li class="flex items-start gap-2"><span class="text-emerald-600 mt-0.5">&#10003;</span>Starts at 2 seats &mdash; add more anytime, billed per seat</li>
             <li class="flex items-start gap-2"><span class="text-emerald-600 mt-0.5">&#10003;</span>Standalone Windows desktop install</li>
@@ -754,7 +766,7 @@
           <p class="text-2xl font-bold text-navy-900 mb-3">Contact us</p>
           <p class="text-sm text-slate-600 mb-6 leading-relaxed">For large advisory firms and family offices with more investor folios or seats than Advisor Prime covers.</p>
           <ul class="space-y-2.5 text-sm text-slate-700 mb-8">
-            <li class="flex items-start gap-2"><span class="text-emerald-600 mt-0.5">&#10003;</span>All 10 reports &amp; PDF export</li>
+            <li class="flex items-start gap-2"><span class="text-emerald-600 mt-0.5">&#10003;</span>All 11 reports &amp; PDF export</li>
             <li class="flex items-start gap-2"><span class="text-emerald-600 mt-0.5">&#10003;</span>50+ investor folios</li>
             <li class="flex items-start gap-2"><span class="text-emerald-600 mt-0.5">&#10003;</span>Seats &amp; billing tailored to your firm</li>
             <li class="flex items-start gap-2"><span class="text-emerald-600 mt-0.5">&#10003;</span>Standalone Windows desktop install</li>
@@ -858,12 +870,12 @@
               </tr>
               <tr class="odd:bg-white even:bg-slate-50/60 hover:bg-emerald-50/40 transition-colors">
                 <td class="sticky left-0 odd:bg-white even:bg-slate-50/60 px-4 py-3 font-semibold text-navy-900 z-10">Reports viewable</td>
-                <td class="px-4 py-3 text-slate-600" colspan="6">&#10003; All 10 reports, on screen, on every plan</td>
+                <td class="px-4 py-3 text-slate-600" colspan="6">&#10003; All 11 reports, on screen, on every plan</td>
               </tr>
               <tr class="odd:bg-white even:bg-slate-50/60 hover:bg-emerald-50/40 transition-colors">
                 <td class="sticky left-0 odd:bg-white even:bg-slate-50/60 px-4 py-3 font-semibold text-navy-900 z-10">PDF export</td>
                 <td class="px-4 py-3 text-amber-700 font-medium">Investor Summary only</td>
-                <td class="px-4 py-3 text-slate-600" colspan="5">&#10003; All 10 reports</td>
+                <td class="px-4 py-3 text-slate-600" colspan="5">&#10003; All 11 reports</td>
               </tr>
               <tr class="odd:bg-white even:bg-slate-50/60 hover:bg-emerald-50/40 transition-colors">
                 <td class="sticky left-0 odd:bg-white even:bg-slate-50/60 px-4 py-3 font-semibold text-navy-900 z-10">License activation</td>
