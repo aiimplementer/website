@@ -237,6 +237,152 @@
     </div>
   </section>
 
+  <!-- See it in action -->
+  <section id="see-it-in-action" class="py-16 px-6 bg-gray-800 border-y border-gray-700">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-3xl font-bold text-white mb-2">See it in action</h2>
+      <p class="text-gray-400 mb-8">Watch the walkthrough, or browse the desk screen by screen.</p>
+
+      <!-- Tabs -->
+      <div class="flex gap-2 mb-6">
+        <button id="tab-video" onclick="sm_showTab('video')" class="px-4 py-2 rounded-md text-sm font-semibold bg-cyan-500 text-gray-900 transition">Demo video</button>
+        <button id="tab-screens" onclick="sm_showTab('screens')" class="px-4 py-2 rounded-md text-sm font-semibold border border-gray-600 text-gray-300 hover:border-cyan-400 hover:text-cyan-400 transition">Screenshots</button>
+      </div>
+
+      <!-- Video panel -->
+      <div id="panel-video">
+        <div class="rounded-2xl overflow-hidden border border-gray-700 bg-black">
+          <video controls preload="metadata" class="w-full aspect-video">
+            <source src="videos/ScheduleMateDemo.mp4" type="video/mp4" />
+            Your browser doesn't support embedded video. <a href="videos/ScheduleMateDemo.mp4" class="text-cyan-400 underline">Download the demo</a> instead.
+          </video>
+        </div>
+      </div>
+
+      <!-- Screenshot carousel panel -->
+      <div id="panel-screens" class="hidden">
+        <div class="relative rounded-2xl overflow-hidden border border-gray-700 bg-gray-900">
+          <div id="sm-track" class="flex transition-transform duration-300 ease-out">
+
+            <figure class="w-full flex-shrink-0 m-0">
+              <img src="images/appointments.png" alt="ScheduleMate appointments list" class="w-full block" />
+              <figcaption class="px-5 py-3 text-sm text-gray-400 border-t border-gray-700">Appointments — everything booked through your link or entered by hand, in order.</figcaption>
+            </figure>
+
+            <figure class="w-full flex-shrink-0 m-0">
+              <img src="images/calendar.png" alt="ScheduleMate calendar view" class="w-full block" />
+              <figcaption class="px-5 py-3 text-sm text-gray-400 border-t border-gray-700">Calendar — active appointments per day at a glance.</figcaption>
+            </figure>
+
+            <figure class="w-full flex-shrink-0 m-0">
+              <img src="images/customers.png" alt="ScheduleMate customers list" class="w-full block" />
+              <figcaption class="px-5 py-3 text-sm text-gray-400 border-t border-gray-700">Customers — built automatically from appointment history.</figcaption>
+            </figure>
+
+            <figure class="w-full flex-shrink-0 m-0">
+              <img src="images/services.png" alt="ScheduleMate services management" class="w-full block" />
+              <figcaption class="px-5 py-3 text-sm text-gray-400 border-t border-gray-700">Services — what customers can book, each with its own duration.</figcaption>
+            </figure>
+
+            <figure class="w-full flex-shrink-0 m-0">
+              <img src="images/scheduling.png" alt="ScheduleMate scheduling and working hours" class="w-full block" />
+              <figcaption class="px-5 py-3 text-sm text-gray-400 border-t border-gray-700">Scheduling — working hours, holidays, and one-off blocks.</figcaption>
+            </figure>
+
+            <figure class="w-full flex-shrink-0 m-0">
+              <img src="images/manage_staff.png" alt="ScheduleMate staff management" class="w-full block" />
+              <figcaption class="px-5 py-3 text-sm text-gray-400 border-t border-gray-700">Staff — who can log in, and what they're allowed to do.</figcaption>
+            </figure>
+
+            <figure class="w-full flex-shrink-0 m-0">
+              <img src="images/business_settings.png" alt="ScheduleMate business settings" class="w-full block" />
+              <figcaption class="px-5 py-3 text-sm text-gray-400 border-t border-gray-700">Business settings — contact details and booking-page behaviour.</figcaption>
+            </figure>
+
+            <figure class="w-full flex-shrink-0 m-0">
+              <img src="images/booking_page.png" alt="ScheduleMate public booking page" class="w-full block" />
+              <figcaption class="px-5 py-3 text-sm text-gray-400 border-t border-gray-700">Public booking page — customers pick a service and a time.</figcaption>
+            </figure>
+
+            <figure class="w-full flex-shrink-0 m-0">
+              <img src="images/view_booking.png" alt="ScheduleMate booking lookup and cancellation" class="w-full block" />
+              <figcaption class="px-5 py-3 text-sm text-gray-400 border-t border-gray-700">Look up / cancel — customers can find and cancel their own booking.</figcaption>
+            </figure>
+
+          </div>
+
+          <!-- Prev/Next -->
+          <button onclick="sm_move(-1)" aria-label="Previous screenshot" class="absolute left-3 top-1/2 -translate-y-1/2 bg-gray-900/80 hover:bg-gray-900 text-white w-9 h-9 rounded-full flex items-center justify-center border border-gray-700">‹</button>
+          <button onclick="sm_move(1)" aria-label="Next screenshot" class="absolute right-3 top-1/2 -translate-y-1/2 bg-gray-900/80 hover:bg-gray-900 text-white w-9 h-9 rounded-full flex items-center justify-center border border-gray-700">›</button>
+        </div>
+
+        <!-- Dots -->
+        <div id="sm-dots" class="flex justify-center gap-2 mt-4"></div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    (function () {
+      var track = document.getElementById('sm-track');
+      var dotsWrap = document.getElementById('sm-dots');
+      var slides = track ? track.children.length : 0;
+      var index = 0;
+
+      for (var i = 0; i < slides; i++) {
+        var dot = document.createElement('button');
+        dot.className = 'w-2.5 h-2.5 rounded-full bg-gray-600';
+        dot.setAttribute('aria-label', 'Go to screenshot ' + (i + 1));
+        dot.onclick = (function (n) { return function () { sm_goTo(n); }; })(i);
+        dotsWrap.appendChild(dot);
+      }
+
+      function render() {
+        track.style.transform = 'translateX(-' + (index * 100) + '%)';
+        var dots = dotsWrap.children;
+        for (var i = 0; i < dots.length; i++) {
+          dots[i].className = 'w-2.5 h-2.5 rounded-full ' + (i === index ? 'bg-cyan-400' : 'bg-gray-600');
+        }
+      }
+
+      window.sm_goTo = function (n) {
+        index = (n + slides) % slides;
+        render();
+      };
+
+      window.sm_move = function (delta) {
+        sm_goTo(index + delta);
+      };
+
+      window.sm_showTab = function (tab) {
+        var video = document.getElementById('panel-video');
+        var screens = document.getElementById('panel-screens');
+        var tabVideo = document.getElementById('tab-video');
+        var tabScreens = document.getElementById('tab-screens');
+        var activeCls = 'px-4 py-2 rounded-md text-sm font-semibold bg-cyan-500 text-gray-900 transition';
+        var inactiveCls = 'px-4 py-2 rounded-md text-sm font-semibold border border-gray-600 text-gray-300 hover:border-cyan-400 hover:text-cyan-400 transition';
+
+        if (tab === 'video') {
+          video.classList.remove('hidden');
+          screens.classList.add('hidden');
+          tabVideo.className = activeCls;
+          tabScreens.className = inactiveCls;
+          var vid = video.querySelector('video');
+          if (vid) vid.pause ? null : null; // no-op, keep as is
+        } else {
+          video.classList.add('hidden');
+          screens.classList.remove('hidden');
+          tabVideo.className = inactiveCls;
+          tabScreens.className = activeCls;
+          var playing = video.querySelector('video');
+          if (playing) playing.pause();
+        }
+      };
+
+      render();
+    })();
+  </script>
+
   <!-- How it works -->
   <section id="how" class="py-16 px-6 bg-gray-800 border-y border-gray-700">
     <div class="max-w-6xl mx-auto">
