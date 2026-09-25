@@ -1,0 +1,226 @@
+:root {
+  --aii-bg: #0f172a;        /* slate-900 — page background */
+  --aii-bg-alt: #1e293b;    /* slate-800 — card background */
+  --aii-border: #374151;    /* gray-700 */
+  --aii-text: #e2e8f0;      /* slate-200 — body text */
+  --aii-cyan: #22d3ee;      /* cyan-400 — hover/accent */
+  --aii-cyan-500: #06b6d4;  /* cyan-500 — buttons */
+  --aii-btn-text: #0f172a;  /* text on cyan buttons */
+  --aii-font: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+#aii-chat-bubble {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 56px;
+  height: 56px;
+  border-radius: 9999px;
+  background: var(--aii-cyan-500);
+  color: var(--aii-btn-text);
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(6, 182, 212, 0.35);
+  font-size: 24px;
+  z-index: 999999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s, transform 0.15s;
+}
+
+#aii-chat-bubble:hover {
+  background: var(--aii-cyan);
+  transform: scale(1.05);
+}
+
+#aii-chat-panel {
+  position: fixed;
+  bottom: 92px;
+  right: 24px;
+  width: 340px;
+  max-width: calc(100vw - 32px);
+  height: 460px;
+  max-height: calc(100vh - 140px);
+  background: linear-gradient(to bottom, var(--aii-bg), var(--aii-bg-alt), var(--aii-bg));
+  border: 1px solid var(--aii-border);
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+  display: none;
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 999999;
+  font-family: var(--aii-font);
+}
+
+#aii-chat-panel.aii-open {
+  display: flex;
+}
+
+#aii-chat-header {
+  background: var(--aii-bg);
+  color: #fff;
+  padding: 14px 16px;
+  font-weight: 600;
+  font-size: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--aii-border);
+}
+
+#aii-chat-header-btns {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+#aii-chat-home {
+  background: none;
+  border: none;
+  font-size: 15px;
+  cursor: pointer;
+  line-height: 1;
+  opacity: 0.85;
+  transition: opacity 0.15s, transform 0.15s;
+}
+
+#aii-chat-home:hover {
+  opacity: 1;
+  transform: scale(1.08);
+}
+
+#aii-chat-close {
+  background: none;
+  border: none;
+  color: var(--aii-text);
+  font-size: 18px;
+  cursor: pointer;
+  line-height: 1;
+  font-family: var(--aii-font);
+}
+
+#aii-chat-close:hover {
+  color: var(--aii-cyan);
+}
+
+#aii-chat-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px;
+}
+
+#aii-chat-title {
+  font-weight: 600;
+  font-size: 14px;
+  color: #fff;
+  margin-bottom: 6px;
+}
+
+#aii-chat-message {
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: var(--aii-text);
+  white-space: pre-line;
+  margin-bottom: 14px;
+}
+
+.aii-option-btn {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 10px 12px;
+  margin-bottom: 8px;
+  border: 1px solid var(--aii-border);
+  border-radius: 12px;
+  background: rgba(30, 41, 59, 0.8); /* slate-800/80, matches .solution-item cards */
+  color: var(--aii-text);
+  font-size: 13.5px;
+  font-family: var(--aii-font);
+  cursor: pointer;
+  transition: color 0.15s, border-color 0.15s;
+}
+
+.aii-option-btn:hover {
+  color: var(--aii-cyan);
+  border-color: var(--aii-cyan);
+}
+
+.aii-cta-btn {
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: 10px 12px;
+  margin-bottom: 8px;
+  border: none;
+  border-radius: 12px;
+  background: var(--aii-cyan-500);
+  color: var(--aii-btn-text);
+  font-size: 13.5px;
+  font-weight: 600;
+  font-family: var(--aii-font);
+  text-decoration: none;
+  cursor: pointer;
+  box-sizing: border-box;
+  transition: background 0.15s;
+}
+
+.aii-cta-btn:hover {
+  background: var(--aii-cyan);
+}
+
+#aii-chat-loading,
+.aii-chat-error {
+  font-size: 13px;
+  color: #94a3b8; /* slate-400 */
+  font-family: var(--aii-font);
+}
+
+.aii-chat-error {
+  color: #f87171; /* red-400, readable on dark bg */
+}
+
+/* Reveal-on-load: elements start hidden/offset and animate in one at a
+   time as JS adds .aii-show with a staggered delay (see widget.js). */
+.aii-reveal {
+  opacity: 0;
+  transform: translateY(6px);
+}
+
+.aii-reveal.aii-show {
+  animation: aii-fade-in 0.28s ease forwards;
+}
+
+@keyframes aii-fade-in {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Typing indicator shown while the next node is "loading", so the widget
+   reads like a live chat rather than menus popping in instantly. */
+.aii-typing {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 10px 12px;
+  margin-bottom: 8px;
+}
+
+.aii-typing span {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--aii-cyan);
+  opacity: 0.4;
+  animation: aii-typing-bounce 1.1s infinite ease-in-out;
+}
+
+.aii-typing span:nth-child(2) { animation-delay: 0.15s; }
+.aii-typing span:nth-child(3) { animation-delay: 0.3s; }
+
+@keyframes aii-typing-bounce {
+  0%, 60%, 100% { transform: translateY(0); opacity: 0.4; }
+  30% { transform: translateY(-4px); opacity: 1; }
+}
