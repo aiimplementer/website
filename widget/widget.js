@@ -8,7 +8,7 @@
   var MENU_DATA = {
   "root": {
     "id": "root",
-    "title": "AI Implementer",
+    "title": "",
     "message": "Hi! I'm the AI Implementer assistant. What would you like to know?",
     "options": [
       {
@@ -571,9 +571,12 @@
   function render(node) {
     bodyEl.innerHTML = "";
 
-    var title = el("div", { id: "aii-chat-title", innerText: node.title, className: "aii-reveal" });
+    var title = null;
+    if (node.title) {
+      title = el("div", { id: "aii-chat-title", innerText: node.title, className: "aii-reveal" });
+      bodyEl.appendChild(title);
+    }
     var message = el("div", { id: "aii-chat-message", innerText: node.message, className: "aii-reveal" });
-    bodyEl.appendChild(title);
     bodyEl.appendChild(message);
 
     var revealables = [];
@@ -600,7 +603,7 @@
     }
 
     var STEP_MS = 110;
-    [title, message].concat(revealables).forEach(function (elm, i) {
+    (title ? [title, message] : [message]).concat(revealables).forEach(function (elm, i) {
       setTimeout(function () {
         elm.classList.add("aii-show");
         bodyEl.scrollTop = bodyEl.scrollHeight;
